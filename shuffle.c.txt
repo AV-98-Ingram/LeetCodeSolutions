@@ -1,0 +1,158 @@
+/* Description:
+ * Shuffle a set of numbers without duplicates.
+ * 
+ * Example:
+ * // Init an array with set 1, 2, and 3.
+ * int[] nums = {1,2,3};
+ * Solution solution = new Solution(nums);
+ * 
+ * // Shuffle the array [1,2,3] and return its result. Any permutation of [1,2,3] must equally likely to be returned.
+ * solution.shuffle();
+ *
+ * // Resets the array back to its original configuration [1,2,3].
+ * solution.reset();
+ * 
+ * // Returns the random shuffling of array [1,2,3].
+ * solution.shuffle();
+ */
+
+Solution 1:
+
+// A set of n numbers have n! permutations. Let each element be labeled as 1, 2, ..., n-1.
+// Then we can label permutations as
+// 0:      1 2 ...  n-2 n-1
+// 1:      1 2 ...  n-1 n-2
+// ...
+// (n-1)!: 2 1 ...  n-2 n-1
+
+// The permutation labeling can be seen as encoding a permutation into
+// a integer between 0 (inclusive) and n! (exclusive). Let label(p) be
+// the label of a permutation p.  Encoding follows such an idea:
+// label(x ...) > label(x' ...), for any x' that 0 <= x' <= x-1
+// label(x y ...) > label(x y' ...), for any y' that 0 <= y' <= y-1 && y' != x
+// ...
+// label(x ... z y) > label(x ... y z), if y < z
+
+// An opposite process to encoding is decoding, which takes a number m
+// in [0, n!) and returns a permutation p such that label(p) = m.
+
+// Then this problem can be solved by simple return "decode(rand(0 .. n!-1))"
+
+// 'decode(m, n, i, seen, a)' means that decoding 'm' to the
+// permutation of first 'i' such elements that do not overlap with
+// elements in 'seen', among the set of size 'n'.
+decode(m, n, i, seen, a) 
+// pre-cond:  0 <= m < n! && 1 <= i <= n && isSet(seen) && isValid(a + (1 .. n))
+{
+  if (i = 1) {
+    return append(a, skip(seen, n, i));
+  } else {
+    ele = m / (i-1)! + 1;
+    ele = skip(seen, n, ele);
+    seen = add(seen, ele);
+    m = m % (i-1)!;
+    a = append(a, ele);
+    return decode(m, n, i-1, seen, a);
+  }  
+}
+
+skip(seen, n, x); // x <= \result < n && !in(\result, seen) && FORALL t. x <= t < \result -> in(t, seen)
+
+// Theorem:
+// Let [x] denotes {0, 1, ..., x-1} in
+// m != m' && 0 <= m, m' < i! && !intersects([i], s) && union([i], s) = [n]
+// -> decode(m, n, i, s, a) != decode(m', n, i, s, a)
+
+// The theorem above states that each number represents a unique
+// permutation & there are at least n! of them.
+
+
+
+
+
+
+Solution 2:
+
+// table[n]: table[i] returns the i-th element
+// when table[i] is picked, move the last element in table to table[i], then shrink the table size.
+
+table_len = n;
+while (table_len >= 0) {
+  pick = rand(0, table_len-1);
+  result.append(table[pick]);
+  table[pick] = table[table_len - 1];
+  table_len--;  
+ }
+return result;
+
+/////////////////////////////////////
+accepted solution
+////////////////////////////////////
+
+
+typedef struct {
+    int * nums;
+    int * fixed;
+    int size;
+} Solution;
+
+
+Solution* solutionCreate(int* nums, int numsSize) {
+    Solution * obj = (Solution *)malloc(sizeof(Solution));
+    
+    obj->nums = (int *)malloc(sizeof(int) * numsSize);  
+    obj->fixed = (int *)malloc(sizeof(int) * numsSize);  
+    obj->size = numsSize;
+    memcpy(obj->nums, nums, sizeof(int) * numsSize);
+    memcpy(obj->fixed, nums, sizeof(int) * numsSize);
+    return obj;
+}
+
+/** Resets the array to its original configuration and return it. */
+int* solutionReset(Solution* obj, int* retSize) {
+    *retSize = obj->size;
+    memcpy(obj->nums, obj->fixed, sizeof(int) * obj->size);
+    return obj->nums;
+}
+
+/** Returns a random shuffling of the array. */
+int* solutionShuffle(Solution* obj, int* retSize) {
+  int * nums = obj->nums;
+  int size = obj->size;
+  int table_len = size;
+    
+  if (table_len > 0) {  
+  int table[table_len];
+  int out[size];
+    
+    *retSize = size;
+    for (int i = 0; i < table_len; i++) table[i] = i;
+    
+    while (table_len > 1) {
+        int pick = rand() % table_len;
+        
+        out[size - table_len] = nums[table[pick]];
+        table[pick] = table[table_len - 1];
+        table_len -= 1;
+    }
+    out[size-1] = nums[table[0]];
+    memcpy(nums, out, sizeof(int) * size);
+  }    
+    return nums;
+}
+
+void solutionFree(Solution* obj) {
+    free(obj->nums);
+    free(obj->fixed);
+    free(obj);
+}
+
+/**
+ * Your Solution struct will be instantiated and called as such:
+ * Solution* obj = solutionCreate(nums, numsSize);
+ * int* param_1 = solutionReset(obj, retSize);
+ 
+ * int* param_2 = solutionShuffle(obj, retSize);
+ 
+ * solutionFree(obj);
+*/
