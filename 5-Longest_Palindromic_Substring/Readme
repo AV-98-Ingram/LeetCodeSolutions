@@ -1,0 +1,6 @@
+There is a dynamic programming approach I do not try to code because
+its time complexity is same as solution 1 and 2 and consumes more
+space.  The core idea of the DP approach is
+
+  Let P(s, i, j) be isPalindorm(s[i .. j]).  Then if s[i-1] = s[j+1]
+  and P(s, i, j), P(s, i-1, j+1).
