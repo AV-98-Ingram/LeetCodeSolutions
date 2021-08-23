@@ -27,25 +27,24 @@
        B^ = {b_{m/2 + 1}, ..., b_{m-1}}.   
     
     Theorem: the elements involved in computing the median of A and B is
-    not in min(A_, B^).
+    NOT in min(A_, B^).
 
     Proof:
 
-      Lemma 1: the element c such that m(C, c) is not in the prefix
-      {c_0, ..., c_x}.
-      Proof: For any element c' in the prefix, there are at least
+      Lemma 1: the element c such that m(C, c) is not in A_.
+
+      Proof: Let a' and b' be the medians of A and B, respectively.
+             For any element a in the prefix A_, there are at least
              (n/2+1) + (m/2+1) elements in C that are greater than or
-             equal to c'. Because c_x is in A_. Then 
-               c' <= c_x <= any in A^, and 
-               c' <= c_x <= any a in A that m(A, a)
-               c' <= c_x <= any in B^, and 
-               c' <= c_x <= any b in B that m(B, b)
+             equal to a.  Because         
+               a <= a' <= A^   and   a <= a' < b' <= B^  and
+               size(A^) = n / 2   and size(B^) = m / 2.
 
              The element c in C that m(C, c) must be the ((n+m)/2)-th
              element if n+m is odd or is in the range [(n+m)/2-1,
              (n+m)/2] if n+m is even.  In either case, there will be
              NO MORE THAN n/2 + m/2 elements that are greaer than or
-             equal to c.  Thus, c' cannot be c.
+             equal to c.  Thus, a cannot be c.
 
 	     To show why "NO MORE THAN n/2 + m/2 elements", one can
 	     break down the cases for n+m, i.e.,
@@ -53,8 +52,7 @@
              2. n+m is even and both n and m are odd, or
              3. n+m is even and both n and m are even.
 
-      Lemma 2: the element c such that m(C, c) is not in the suffix
-      {c_y, c_{y+1}, ..., c_{n+m-1}}.
+      Lemma 2: the element c such that m(C, c) is not in B^.
       Proof: similar to the proof of Lemma 1.
 
     Theorem 1 is simply the consequence of Lemma 1 and 2.
