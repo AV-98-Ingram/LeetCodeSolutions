@@ -43,12 +43,6 @@
 **12-Integer_to_roman**
 - extract digits from an integer and use of List
 
-**13-Roman_to_integer**
-- easy, simply do a scan with look ahead at special cases.
-
-**14-Longest_common_prefix**
-- easy
-
 **15-3Sum** 
 - dividing numbers to non-negative and negative groups
 - finding the one in one group that can cancel the sum of two numbers in the other group
@@ -63,3 +57,8 @@
 - the input is invalid if input ends before visiting done or visiting is done before the input ends
 - using Java's string split method could make coding much easier
 
+# Easy ones:
+20-Valid_parentheses/solution.c
+21-Merge_two_sorted_list/solution.c
+13-Roman_to_integer
+14-Longest_common_prefix
