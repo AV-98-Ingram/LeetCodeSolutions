@@ -43,6 +43,17 @@
 **12-Integer_to_roman**
 - extract digits from an integer and use of List
 
+**13-Roman_to_integer**
+- easy, simply do a scan with look ahead at special cases.
+
+**14-Longest_common_prefix**
+- easy
+
+**15-3Sum** 
+- dividing numbers to non-negative and negative groups
+- finding the one in one group that can cancel the sum of two numbers in the other group
+- (0, 0, 0) needs special handling as all numbers are from the same group
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -51,3 +62,4 @@
 - recursively visit a binary tree
 - the input is invalid if input ends before visiting done or visiting is done before the input ends
 - using Java's string split method could make coding much easier
+
