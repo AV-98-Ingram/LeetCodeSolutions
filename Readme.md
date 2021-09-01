@@ -47,6 +47,10 @@
 - dividing numbers to non-negative and negative groups
 - finding the one in one group that can cancel the sum of two numbers in the other group
 - (0, 0, 0) needs special handling as all numbers are from the same group
+- this approach is also O(n^2) but "two pointer" is better in space cost
+
+**16-3Sum_closest**
+- in order to have a O(n^2) solution, this problem must use the "two pointer" approach mentioned in 15-3Sum
 
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
@@ -59,6 +63,11 @@
 
 # Easy ones:
 20-Valid_parentheses/solution.c
+
 21-Merge_two_sorted_list/solution.c
+
 13-Roman_to_integer
+
 14-Longest_common_prefix
+
+153-Find_minimum_in_rotated_sorted_array
