@@ -52,6 +52,9 @@
 **16-3Sum_closest**
 - in order to have a O(n^2) solution, this problem must use the "two pointer" approach mentioned in 15-3Sum
 
+**18-4Sum**
+- Just use the "two pointers" approach. Time complexity O(n^3).
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -62,12 +65,18 @@
 - using Java's string split method could make coding much easier
 
 # Easy ones:
-20-Valid_parentheses/solution.c
-
-21-Merge_two_sorted_list/solution.c
-
 13-Roman_to_integer
 
 14-Longest_common_prefix
+
+17-Letter_combinations_of_a_phone_number
+
+19-Remove_nth_node_from_end_of_list
+
+20-Valid_parentheses
+
+21-Merge_two_sorted_list
+
+22-Generate_parentheses
 
 153-Find_minimum_in_rotated_sorted_array
