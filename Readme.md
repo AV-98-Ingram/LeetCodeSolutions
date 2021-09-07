@@ -1,7 +1,11 @@
 # Problems need re-visit
 
-**1235-maximum_profit_in_job_scheduling**
-- try to solve it again after I have nearly forgotten the solution.
+**try to solve them  again after I have nearly forgotten the solution**
+
+- 1235-maximum_profit_in_job_scheduling (hard)
+- 834-Sum_of_distances_in_tree (hard)
+
+
 
 # A Quick Index to the Solved Problems 
 
@@ -55,6 +59,16 @@
 **18-4Sum**
 - Just use the "two pointers" approach. Time complexity O(n^3).
 
+**23-merge_k_sorted_list**
+- didn't realize what I did there is in fact a PriorityQueue
+
+**24-Swap_nodes_in_pairs**
+- easy but be careful with prevprev, prev and curr node update
+
+**25-Reverse_nodes_in_k_Group(hard)**
+- not hard, but need to be careful
+- remember how to reverse a linked list
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -78,5 +92,7 @@
 21-Merge_two_sorted_list
 
 22-Generate_parentheses
+
+26-Remove_duplicates_from_sorted_array
 
 153-Find_minimum_in_rotated_sorted_array
