@@ -1,3 +1,6 @@
+# Topics
+- KMP algorithm
+
 # Problems need re-visit
 
 **try to solve them  again after I have nearly forgotten the solution**
@@ -69,6 +72,17 @@
 - not hard, but need to be careful
 - remember how to reverse a linked list
 
+**28-strStr**
+- easy IF not using KMP
+
+**29-Divide_two_integers**
+- not hard but need to do binary subtraction to compute quotient
+- bit shift operation is needed
+
+**30-Substring_with_concatenation_of_all_words(hard)**
+- a brutal force solution timeouts but passes with a tiny optimization
+- no need to look for better solutions I guess
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -94,5 +108,7 @@
 22-Generate_parentheses
 
 26-Remove_duplicates_from_sorted_array
+
+27-Remove_element
 
 153-Find_minimum_in_rotated_sorted_array
