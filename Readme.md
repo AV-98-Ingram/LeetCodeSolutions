@@ -83,6 +83,16 @@
 - a brutal force solution timeouts but passes with a tiny optimization
 - no need to look for better solutions I guess
 
+**31-Next_permutation**
+- find the pattern in lexicographical order
+
+**32-Longest_valid_parentheses(hard)**
+- not hard, play around with stack
+
+**33-Search_in_rotated_sorted_array**
+- the given condition that the input array has unique elements is critical
+- binary search by testing on the ascending half (at least one ascending half)
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -110,5 +120,9 @@
 26-Remove_duplicates_from_sorted_array
 
 27-Remove_element
+
+34-Find_first_and_last_position_of_element_in_sorted_array
+
+35-Search_insert_position
 
 153-Find_minimum_in_rotated_sorted_array
