@@ -93,6 +93,10 @@
 - the given condition that the input array has unique elements is critical
 - binary search by testing on the ascending half (at least one ascending half)
 
+**36-Valid_sudoku/37-Sudoku_solver** 
+- maintain each "region" separately, where a "region" is either a row, a column or a 3X3 sub-box.
+- use book-keeping function to relate row index and column index with corresponding regions.
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
