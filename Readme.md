@@ -97,6 +97,10 @@
 - maintain each "region" separately, where a "region" is either a row, a column or a 3X3 sub-box.
 - use book-keeping function to relate row index and column index with corresponding regions.
 
+**38-Count_and_say**
+- recursive computation. For each recursion, I let it re-use the group information from last recursion and build group information incrementally.
+- maybe straightforward solution is faster since each group is really small so that saving group information does not really help.
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
