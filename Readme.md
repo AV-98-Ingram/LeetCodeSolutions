@@ -101,6 +101,13 @@
 - recursive computation. For each recursion, I let it re-use the group information from last recursion and build group information incrementally.
 - maybe straightforward solution is faster since each group is really small so that saving group information does not really help.
 
+**39-Combination_sum**
+- simple DP
+- be careful when caching lists.  Making copies of those lists so that lists in cache will not be touched by rest of the algorithm.
+
+**40-Combination_sum**
+- instead of using set to remove duplicates, my algorithm avoids duplicates at computing by trying out all possible repetitions for each unique number
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
