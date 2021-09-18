@@ -2,6 +2,8 @@
 #include "stdlib.h"
 
 #define T int
+#define LT_T(x, y) ((x) < (y))
+#define GT_T(x, y) ((x) > (y))
 #define SWAP_T(x, y) {T tmp = (x); (x) = (y); (y) = tmp;}
 
 /*
@@ -53,7 +55,7 @@ int partition(T * a, int start, int end, int pivot) {
   
   while (left >= start || right < end) {
     if (left < start) {
-      if (a[right] < a[pivot]) {
+      if (LT_T(a[right], a[pivot])) {
 	if (pivot + 1 < right)
 	  SWAP_T(a[pivot], a[pivot+1]);	  
 	SWAP_T(a[pivot], a[right]);
@@ -61,20 +63,20 @@ int partition(T * a, int start, int end, int pivot) {
       }
       right++;
     } else if (right >= end) {
-      if (a[left] > a[pivot]) {
+      if (GT_T(a[left], a[pivot])) {
 	if (pivot - 1 > left)
 	  SWAP_T(a[pivot], a[pivot-1]);
 	SWAP_T(a[pivot], a[left]);
 	pivot--;
       }
       left--;
-    } else if (a[left] > a[pivot] && a[right] < a[pivot]) {      
+    } else if (GT_T(a[left], a[pivot]) && LT_T(a[right], a[pivot])) {
       // swap left and right:
       SWAP_T(a[left], a[right]);
       left--; right++;
-    } else if (a[left] > a[pivot]) 
+    } else if (GT_T(a[left], a[pivot])) 
       right++;
-    else if (a[right] < a[pivot]) 
+    else if (LT_T(a[right], a[pivot]))
       left--;
     else {
       left--; right++;
@@ -106,7 +108,7 @@ int main(int argc, char * argv[]) {
     in[i] = atoi(argv[i+1]);
   quick_sort(in, 0, argc-1);
   for (int i = 0 ; i < argc-1; i++)
-    printf("%3d", in[i]);
+    printf("%5d", in[i]);
   printf("\n");
 }
 

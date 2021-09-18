@@ -7,6 +7,7 @@
 
 - 1235-maximum_profit_in_job_scheduling (hard)
 - 834-Sum_of_distances_in_tree (hard)
+- 41-First_missing_positive (hard)
 
 
 
@@ -107,6 +108,10 @@
 
 **40-Combination_sum**
 - instead of using set to remove duplicates, my algorithm avoids duplicates at computing by trying out all possible repetitions for each unique number
+
+**42-Trapping_rain_water(hard)**
+- to compute the water size, instead of compute it directly, compute by subtracting the inner "upheaval" sizes from the dent size.
+- keep looking for the max dent among the rest of the sorted heights
 
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
