@@ -8,6 +8,8 @@
 - 1235-maximum_profit_in_job_scheduling (hard)
 - 834-Sum_of_distances_in_tree (hard)
 - 41-First_missing_positive (hard)
+- 43-Multiply_strings
+-- This one is not hard but takes good amount of engineering effort. And this one is good to show off pointer techniques.
 
 
 
