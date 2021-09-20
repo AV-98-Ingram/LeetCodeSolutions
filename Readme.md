@@ -9,7 +9,7 @@
 - 834-Sum_of_distances_in_tree (hard)
 - 41-First_missing_positive (hard)
 - 43-Multiply_strings
--- This one is not hard but takes good amount of engineering effort. And this one is good to show off pointer techniques.
+-- This one is not hard but takes a good amount of engineering effort. And this one is good to show off pointer techniques.
 
 
 
@@ -115,6 +115,13 @@
 - to compute the water size, instead of compute it directly, compute by subtracting the inner "upheaval" sizes from the dent size.
 - keep looking for the max dent among the rest of the sorted heights
 
+**44-Wildcard_matching**
+- simple NFA solution
+
+**45-Jump_game_II**
+- looks like a DP problem but in fact simpler
+- when a problem is obviously a DP one, think twice if DP is needed
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -146,5 +153,7 @@
 34-Find_first_and_last_position_of_element_in_sorted_array
 
 35-Search_insert_position
+
+46-Permutation
 
 153-Find_minimum_in_rotated_sorted_array
