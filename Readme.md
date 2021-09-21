@@ -122,6 +122,12 @@
 - looks like a DP problem but in fact simpler
 - when a problem is obviously a DP one, think twice if DP is needed
 
+**47-Permutation_II**
+- Compare to 46-Permutation, this solution needs to make sure that at each position equivalent numbers do not appear more than once.
+
+**48-Rotate_image**
+- With a drawed picture, it is easier to figure out the algorithm.
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -155,5 +161,7 @@
 35-Search_insert_position
 
 46-Permutation
+
+49-Group_anagrams
 
 153-Find_minimum_in_rotated_sorted_array
