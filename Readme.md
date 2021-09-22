@@ -128,6 +128,12 @@
 **48-Rotate_image**
 - With a drawed picture, it is easier to figure out the algorithm.
 
+**50-Pow**
+- use the rule "x^(2*n)" = "(x^2)^n" to speed up
+
+**51-N_queens(hard)**
+- not hard, but need to be careful, Careful, and CAREFUL
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
