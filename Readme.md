@@ -10,7 +10,8 @@
 - 41-First_missing_positive (hard)
 - 43-Multiply_strings
 -- This one is not hard but takes a good amount of engineering effort. And this one is good to show off pointer techniques.
-
+- 53-Maximum_subarray(easy)
+-- Sarcastically, I didn't realize the solution is so easy!
 
 
 # A Quick Index to the Solved Problems 
@@ -131,8 +132,11 @@
 **50-Pow**
 - use the rule "x^(2*n)" = "(x^2)^n" to speed up
 
-**51-N_queens(hard)**
+**51-N_queens/52-N_queens_II(hard)**
 - not hard, but need to be careful, Careful, and CAREFUL
+
+**54-Spiral_matrix**
+- be careful careful and careful
 
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
