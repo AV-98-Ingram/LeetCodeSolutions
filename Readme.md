@@ -138,6 +138,20 @@
 **54-Spiral_matrix**
 - be careful careful and careful
 
+**55-Jump_game**
+- be careful
+
+**56-Merge_intervals**
+- for objects that can hardly be quick-indexed such as intervals, sorting is the key.
+- it is hard to find the proper interval that contains a specific element in a constant time
+
+**57-Insert_interval**
+- do not let a function deals with too complicated cases
+
+**60-Permutation_sequence**
+- for a k-th (0-based) permutation "xyz..." of length n,  'x' is the (k/(n-1)!)-th (0-based) unused number.
+- then k = k % (n-1)!, 'y' is the (k/(n-2)!)-th unused number, so on and so forth.
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -174,4 +188,8 @@
 
 49-Group_anagrams
 
+58-Length_of_last_word
+
 153-Find_minimum_in_rotated_sorted_array
+
+1328-Break_a_palindrome
