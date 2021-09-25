@@ -152,6 +152,10 @@
 - for a k-th (0-based) permutation "xyz..." of length n,  'x' is the (k/(n-1)!)-th (0-based) unused number.
 - then k = k % (n-1)!, 'y' is the (k/(n-2)!)-th unused number, so on and so forth.
 
+**61-Rotate_list**
+- Be careful that if moving from head to the n-th (1-based) node in a list, it takes n-1 steps.
+- in general, be carefull with non-0-based counting.
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -189,6 +193,8 @@
 49-Group_anagrams
 
 58-Length_of_last_word
+
+62-Unique_path/solution.c
 
 153-Find_minimum_in_rotated_sorted_array
 
