@@ -156,6 +156,9 @@
 - Be careful that if moving from head to the n-th (1-based) node in a list, it takes n-1 steps.
 - in general, be carefull with non-0-based counting.
 
+**63-Unique_path_II**
+- Compare to 62-Unique_path, now there exists paths that cannot reach the end.  So we cannot continue to use 0 as "initial values" for the cache
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -164,6 +167,10 @@
 - recursively visit a binary tree
 - the input is invalid if input ends before visiting done or visiting is done before the input ends
 - using Java's string split method could make coding much easier
+
+**1095-Find_in_mountain_array**
+- binary search on a mountain array: using mid and mid+1 to determine the monotonic side (elements are unique is critical)
+- Addressing the speical requirement: whenever read the array elements, test it against the target
 
 # Easy ones:
 13-Roman_to_integer
