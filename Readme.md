@@ -165,6 +165,9 @@
 **65-Valid_number**
 - needs to parse the description carefully
 
+**67-Add_binary**
+- remember that strlen does not count the null-termination
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
