@@ -159,6 +159,12 @@
 **63-Unique_path_II**
 - Compare to 62-Unique_path, now there exists paths that cannot reach the end.  So we cannot continue to use 0 as "initial values" for the cache
 
+**64-Minimum_path_sum**
+- similar to 62-Unique_path/63-Unique_path_II
+
+**65-Valid_number**
+- needs to parse the description carefully
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
