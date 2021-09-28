@@ -168,6 +168,12 @@
 **67-Add_binary**
 - remember that strlen does not count the null-termination
 
+**68-Test_justification**
+- engineering effort
+
+**69-Sqrt**
+- always be careful that int * int can result in long
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -210,7 +216,9 @@
 
 58-Length_of_last_word
 
-62-Unique_path/solution.c
+62-Unique_path
+
+70-Climb_stairs
 
 153-Find_minimum_in_rotated_sorted_array
 
