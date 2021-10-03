@@ -174,6 +174,18 @@
 **69-Sqrt**
 - always be careful that int * int can result in long
 
+**71-Simplify_path**
+- engineering effort. I used C which is fun but not to use C in real interview
+
+**72-Edit_distance**
+- typical DP, DO NOT try to solve it as a math problem, solve it as a DP programming problem
+
+**73-Set_matrix_zeroes**
+- O(n+m) SPACE is easy.  For O(1) SPACE solution, one finds the first 0 at (r, c) and projects all rest 0s onto the row r and column c
+
+**75-Sort_colors**
+- simply placing (by swapping) all reds (0s) at the prefix of the array then place all whites then done.
+
 **274-H_Index**
 - "For each number i, how many publications having at least i citations?"
 - Answering the question above takes O(n) with saving previous results.
@@ -219,6 +231,8 @@
 62-Unique_path
 
 70-Climb_stairs
+
+74-Search_a_2d_matrix
 
 153-Find_minimum_in_rotated_sorted_array
 
