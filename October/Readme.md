@@ -13,6 +13,10 @@
  The best solution is to maintain the window with two pointers "start"
  and "end". Using negative numbers to indicate duplicates, smart!
 
+- 1982-Find_array_given_subset_sums.  I used the approach of find all
+  unique subsets from an unsorted, may-duplicate arrays but it seems
+  is too slow.
+
 
 **77-Combinations**
 - to get unordered combinations of k numbers in [1 .. n], we recursively "build" (on the fly) the tree
@@ -28,3 +32,7 @@ and for each path of length >= k, we take the prefix of length k.
 **78-Subsets**
 - a direct use of 77-Combinations
 - foreach k in [0 .. n], get unordered combinations of k of the input numbers
+
+
+**90-Subsets_II**
+- similar to 78-Subsets but requires 1) sorting and 2) skipping duplication at each level
