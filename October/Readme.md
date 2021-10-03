@@ -15,12 +15,16 @@
 
 
 **77-Combinations**
-- again, to get unordered combinations of (1 .. n), we recursively search the tree:
+- to get unordered combinations of k numbers in [1 .. n], we recursively "build" (on the fly) the tree
 ```
-   1        2        3       ... n
-  /  \     /  \     /  \
- 2 .. n   3 .. n   4 .. n    ...
- /    \
- . .. .
+     1        2        3        4        ... n
+   /   \    /   \    /   \
+  2 ... n  3 ... n  4 ... n    ...
+ /       \ 
 ```
-- for this specific problem, we add a bound on the recursion depth.
+and for each path of length >= k, we take the prefix of length k.
+
+
+**78-Subsets**
+- a direct use of 77-Combinations
+- foreach k in [0 .. n], get unordered combinations of k of the input numbers
