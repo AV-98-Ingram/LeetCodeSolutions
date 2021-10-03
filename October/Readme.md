@@ -14,3 +14,13 @@
  and "end". Using negative numbers to indicate duplicates, smart!
 
 
+**77-Combinations**
+- again, to get unordered combinations of (1 .. n), we recursively search the tree:
+
+   1        2        3        4   .... n
+  /  \     /  \     /  \
+ 2 .. n   3 .. n   4 .. n  ...
+ /    \
+ . .. .
+
+- for this specific problem, we add a bound on the recursion depth.
