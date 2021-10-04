@@ -43,8 +43,7 @@ and for each path of length >= k, we take the prefix of length k.
             /
            /
 ```
-- Speciously, one can no longer tell if a segment of the  array is across the "plummet" by testing "arr[start] > arr[end]" as we do in Problem 33.
-- In fact, we can do a easy trim preprocess to make the array be
+- It seems that one can no longer tell if a segment of the  array is across the "plummet" by testing "arr[start] > arr[end]" as we do in Problem 33.  In fact, we can do a easy trim preprocess to make the array be
 ```
               /
   new_start  /   new_end
@@ -60,3 +59,5 @@ then it becomes same as problem 33.
 
 ** Easys **
 - 80-Remove_duplicates_from_sorted_array_II
+- 82-Remove_duplicates_from_sorted_list_II
+- 83-Remove_duplicates_from_sorted_list
