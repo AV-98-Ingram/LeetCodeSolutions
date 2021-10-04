@@ -43,7 +43,7 @@ and for each path of length >= k, we take the prefix of length k.
             /
            /
 ```
-- Superficially, it seems that one cannot tell if a segment of the  array is across the "plummet" by testing "arr[start] > arr[end]".
+- Speciously, one can no longer tell if a segment of the  array is across the "plummet" by testing "arr[start] > arr[end]" as we do in Problem 33.
 - In fact, we can do a easy trim preprocess to make the array be
 ```
               /
