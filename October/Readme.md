@@ -8,10 +8,9 @@
   storing the part remaining to match.  The algorithm will scan the
   string once, for each scanned letter 'c', all the states will be
   updated w.r.t 'c'.  For states that are completed, compare and set
-  the min.
-
- The best solution is to maintain the window with two pointers "start"
- and "end". Using negative numbers to indicate duplicates, smart!
+  the min.  The best solution is to maintain the window with two
+  pointers "start" and "end". Using negative numbers to indicate
+  duplicates, smart!
 
 - 1982-Find_array_given_subset_sums.  I used the approach of find all
   unique subsets from an unsorted, may-duplicate arrays but it seems
@@ -33,6 +32,31 @@ and for each path of length >= k, we take the prefix of length k.
 - a direct use of 77-Combinations
 - foreach k in [0 .. n], get unordered combinations of k of the input numbers
 
+**79-Word_search**
+- simple DFS solution turns out the best. Using a map to only look at the letters in the given words is slow on Leetcode. Dumb Leetcode.
+
+**81-Search_in_rotated_sorted_array_II**
+- Similar to 33-Search_in_rotated_sorted_array but may contain duplicates, i.e.,
+```
+          /
+  start _/   _ end
+            /
+           /
+```
+- Superficially, it seems that one cannot tell if a segment of the  array is across the "plummet" by testing "arr[start] > arr[end]".
+- In fact, we can do a easy trim preprocess to make the array be
+```
+              /
+  new_start  /   new_end
+                /
+               /	       
+```
+then it becomes same as problem 33.
+  
 
 **90-Subsets_II**
 - similar to 78-Subsets but requires 1) sorting and 2) skipping duplication at each level
+
+
+** Easys **
+- 80-Remove_duplicates_from_sorted_array_II
