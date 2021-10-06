@@ -16,6 +16,9 @@
   unique subsets from an unsorted, may-duplicate arrays but it seems
   is too slow.
 
+- 84-Largest_rectangle_in_histogram.  Usng stack to keep track of
+  donimators, smart.
+  
 
 **77-Combinations**
 - to get unordered combinations of k numbers in [1 .. n], we recursively "build" (on the fly) the tree
@@ -57,7 +60,7 @@ then it becomes same as problem 33.
 - similar to 78-Subsets but requires 1) sorting and 2) skipping duplication at each level
 
 
-** Easys **
+**Easys**
 - 80-Remove_duplicates_from_sorted_array_II
 - 82-Remove_duplicates_from_sorted_list_II
 - 83-Remove_duplicates_from_sorted_list
