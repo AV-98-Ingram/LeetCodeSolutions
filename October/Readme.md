@@ -54,13 +54,44 @@ and for each path of length >= k, we take the prefix of length k.
                /	       
 ```
 then it becomes same as problem 33.
-  
+
+**85-Maximal_rectangle**
+- this problem can be reduced to the 84-Largest_rectangle_in_histogram problem.
+
+**86-Partition_list**
+- one mistake I made is that I didn't think it through how to update the "prev" pointer
+
+**87-Scramble_string**
+- don't miss chance of caching.
+
+**89-Grey_code**
+- look for the recursive pattern
 
 **90-Subsets_II**
 - similar to 78-Subsets but requires 1) sorting and 2) skipping duplication at each level
+
+**91-Decode_ways**
+- just need to figure out how to determine the invalid case
+
+**282-Expression_add_operators**
+- this one is a very good execise for coding
+- no need to revisit but read my notes in the code is necessary
+
+**380-Insert_dlete_get_random_set/381-Insert_delete_get_random_duplicates_allowed**
+-when it comes to random, the probablity really matters.
+
+**394-Decode_string**
+- careful, careful, careful
+
 
 
 **Easys**
 - 80-Remove_duplicates_from_sorted_array_II
 - 82-Remove_duplicates_from_sorted_list_II
 - 83-Remove_duplicates_from_sorted_list
+- 88-Merge_sorted_array
+- 92-Reverse_linked_list_II
+- 93_Restore_ip_addresses
+- 94-Binary_tree_inorder_traversal
+- 206-Reverse_linked_list
+- 554-Brick_wall
