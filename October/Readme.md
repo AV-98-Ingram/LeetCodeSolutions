@@ -73,6 +73,13 @@ then it becomes same as problem 33.
 **91-Decode_ways**
 - just need to figure out how to determine the invalid case
 
+**95-Unique_binary_search_trees_II/96-Unique_binary_search_trees**
+- learned properties of BST (binary search tree)
+- for each sub-tree, we need to know the lower bound and the upper bound
+
+**97-Interleaving_string**
+- Let the two strings match the third one in turn.  Once one string reaches the end, the other must match the remaining.
+
 **282-Expression_add_operators**
 - this one is a very good execise for coding
 - no need to revisit but read my notes in the code is necessary
