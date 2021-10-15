@@ -80,6 +80,12 @@ then it becomes same as problem 33.
 **97-Interleaving_string**
 - Let the two strings match the third one in turn.  Once one string reaches the end, the other must match the remaining.
 
+**99-Recover_binary_search_tree**
+- learned a new property of BST: inorder traversal of a BST yields a sorted sequence of values.
+
+**105-Construct_binary_tree_from_preorder_and_inorder_traversal**
+- observe patterns in the preorder and the inorder input and conclude an algorithm.
+
 **282-Expression_add_operators**
 - this one is a very good execise for coding
 - no need to revisit but read my notes in the code is necessary
@@ -100,5 +106,9 @@ then it becomes same as problem 33.
 - 92-Reverse_linked_list_II
 - 93_Restore_ip_addresses
 - 94-Binary_tree_inorder_traversal
+- 100-Same_tree
+- 102-Binary_tree_level_order_traversal
+- 103-Binary_tree_zigzag_level_order_traversal
+- 104-Maximum_depth_of_binary_tree
 - 206-Reverse_linked_list
 - 554-Brick_wall
