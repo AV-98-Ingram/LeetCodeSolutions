@@ -83,8 +83,12 @@ then it becomes same as problem 33.
 **99-Recover_binary_search_tree**
 - learned a new property of BST: inorder traversal of a BST yields a sorted sequence of values.
 
-**105-Construct_binary_tree_from_preorder_and_inorder_traversal**
+**105-Construct_binary_tree_from_preorder_and_inorder_traversal/106-Construct_binary_tree_from_inorder_and_postorder_traversal**
 - observe patterns in the preorder and the inorder input and conclude an algorithm.
+- 106 is the symmetric version of 105
+
+**108-Convert_sorted_array_to_binary_search_tree**
+- recursively split the array by half and construct the tree
 
 **282-Expression_add_operators**
 - this one is a very good execise for coding
@@ -110,5 +114,6 @@ then it becomes same as problem 33.
 - 102-Binary_tree_level_order_traversal
 - 103-Binary_tree_zigzag_level_order_traversal
 - 104-Maximum_depth_of_binary_tree
+- 107-Binary_tree_level_order_traversal_II
 - 206-Reverse_linked_list
 - 554-Brick_wall
