@@ -90,6 +90,15 @@ then it becomes same as problem 33.
 **108-Convert_sorted_array_to_binary_search_tree**
 - recursively split the array by half and construct the tree
 
+**127-Word_ladder**
+- the basic idea is to do Dijkstra's style BFS, i.e., initially making all nodes unvisited and removing visited nodes to avoid cycles; no cache is ever needed
+- there two ways to achive it: 1) search on graph directly which is good for the cases of small edge numbers and long words; 2) search by manipulating characters in words, which is good for the cases of big edge numbers and shorter words.
+
+**210-Course_schedule_II**
+- I wrote a fix-point like solution which essentially is the BFS topological sorting but less concise.
+- BFS topological sorting: https://en.wikipedia.org/wiki/Topological_sorting
+- DFS topological sorting: marking nodes grey when visited but not fully enabled, marking nodes black once fully enabled. Reaching a grey node means a cycle.  Reaching a black node is fine but no need to search again. (Black node is not on stack while grey nodes are on stack).
+
 **282-Expression_add_operators**
 - this one is a very good execise for coding
 - no need to revisit but read my notes in the code is necessary
