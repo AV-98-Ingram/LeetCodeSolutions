@@ -99,6 +99,9 @@ then it becomes same as problem 33.
 - BFS topological sorting: https://en.wikipedia.org/wiki/Topological_sorting
 - DFS topological sorting: marking nodes grey when visited but not fully enabled, marking nodes black once fully enabled. Reaching a grey node means a cycle.  Reaching a black node is fine but no need to search again. (Black node is not on stack while grey nodes are on stack).
 
+**241-Different_ways_to_add_parentheses**
+- recursively partition expressions: 
+
 **282-Expression_add_operators**
 - this one is a very good execise for coding
 - no need to revisit but read my notes in the code is necessary
@@ -109,7 +112,14 @@ then it becomes same as problem 33.
 **394-Decode_string**
 - careful, careful, careful
 
+**433-Minimum_genetic_mutation**
+- same as 127-Word_ladder
 
+**494-Target_sum**
+- essentially like Ping Pong, remember Ping Pong?
+
+**679-24_game**
+- built a teeny-tiny Real number system based on numerator / denomenator
 
 **Easys**
 - 80-Remove_duplicates_from_sorted_array_II
