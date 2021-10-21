@@ -90,6 +90,21 @@ then it becomes same as problem 33.
 **108-Convert_sorted_array_to_binary_search_tree**
 - recursively split the array by half and construct the tree
 
+**109-Convert_sorted_list_to_binary_search_tree**
+- similar to 108. Keep track of the middle node along the scan of the list. I.e., increment middle every two steps.
+- Another way is to convert the list to an array. That will be same as 108. It will be more fast than my approach but take more memory.
+
+**115-Distinct_subsequences**
+- my first approach, same time complexity with cache as DP but little bit more verbose: find out all places of each character of t in s. Then the problem is reduced to find out all strictly ascending orders of those places with respect to the order of characters in t. For example,
+```
+s = bagbag  t = bag
+We firts find out all places of characters 'b' 'a' 'g' in s: b{0, 3}, a{1, 4}, g{2, 5}.
+Then we count the number of distinct strictly ascending chains: {0, 1, 2} {0, 4, 5}, and {3, 4, 5}.
+
+```
+- It is also a typical DP program. dp[i][j] means the number of distinct subsequences in s[0..i] that are equal to t[0..j].  The base case is obvious.  The transition dp[i][j] = dp[i-1][j] + dp[i-1][j-1] is not so obvious though.
+
+
 **127-Word_ladder**
 - the basic idea is to do Dijkstra's style BFS, i.e., initially making all nodes unvisited and removing visited nodes to avoid cycles; no cache is ever needed
 - there two ways to achive it: 1) search on graph directly which is good for the cases of small edge numbers and long words; 2) search by manipulating characters in words, which is good for the cases of big edge numbers and shorter words.
@@ -118,8 +133,15 @@ then it becomes same as problem 33.
 **494-Target_sum**
 - essentially like Ping Pong, remember Ping Pong?
 
+**646-Maximum_length_of_pair_chain**
+- Sort the intervals by their upper bounds.  Then for an interval pairs[i], it is impossible for pairs[i+1] to lead a longer chain than the one leaded by pairs[i].  Thus, no need to do backtrack tryouts.  It only needs one scan. 
+
 **679-24_game**
 - built a teeny-tiny Real number system based on numerator / denomenator
+
+**1030-Matrix_cells_in_distance_order**
+- I thought the idea of that keeping expanding the surrounding border of the center would work but it won't. Because cells on the border have different distances to the center.
+- fixing a distance and filling all cells sharing the distance is the right way of doing it
 
 **Easys**
 - 80-Remove_duplicates_from_sorted_array_II
@@ -134,5 +156,9 @@ then it becomes same as problem 33.
 - 103-Binary_tree_zigzag_level_order_traversal
 - 104-Maximum_depth_of_binary_tree
 - 107-Binary_tree_level_order_traversal_II
+- 110-Balanced_binary_tree
+- 111-Minimum_depth_of_binary_tree
+- 112-Path_sum
+- 114-Flatten_binary_tree_to_linked_list
 - 206-Reverse_linked_list
 - 554-Brick_wall
