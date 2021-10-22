@@ -104,6 +104,25 @@ Then we count the number of distinct strictly ascending chains: {0, 1, 2} {0, 4,
 ```
 - It is also a typical DP program. dp[i][j] means the number of distinct subsequences in s[0..i] that are equal to t[0..j].  The base case is obvious.  The transition dp[i][j] = dp[i-1][j] + dp[i-1][j-1] is not so obvious though.
 
+**116-Populating_next_right_pointers_in_each_node**
+- the best solution is to take use of the "next-" pointer along a top-down recursion
+
+**117-Populating_next_right_pointers_in_each_node_II**
+- the trickest part here is that the top-down tree traversal must first visit the right child before visiting the left child
+```
+       0
+      / \
+     1   2
+    / \ / \
+   3  4 5  6
+     /    /
+    7    8
+
+If visiting the left child before the right child, when the control
+reaches 4, 4->next points to 5 but 5->next to 6 has not been
+established yet.  As the "next-" pointer is always left to right,
+visiting the right child before the left child will be fine.
+```
 
 **127-Word_ladder**
 - the basic idea is to do Dijkstra's style BFS, i.e., initially making all nodes unvisited and removing visited nodes to avoid cycles; no cache is ever needed
@@ -160,5 +179,8 @@ Then we count the number of distinct strictly ascending chains: {0, 1, 2} {0, 4,
 - 111-Minimum_depth_of_binary_tree
 - 112-Path_sum
 - 114-Flatten_binary_tree_to_linked_list
+- 118-Pascals_triangle
+- 119-Pascals_triangle_II
+- 120-Triangle
 - 206-Reverse_linked_list
 - 554-Brick_wall
