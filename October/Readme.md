@@ -182,5 +182,7 @@ visiting the right child before the left child will be fine.
 - 118-Pascals_triangle
 - 119-Pascals_triangle_II
 - 120-Triangle
+- 124-Binary_tree_max_path_sum
+- 125-Valid_palindrome
 - 206-Reverse_linked_list
 - 554-Brick_wall
