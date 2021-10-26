@@ -124,9 +124,16 @@ established yet.  As the "next-" pointer is always left to right,
 visiting the right child before the left child will be fine.
 ```
 
+**126-Word_ladder_II**
+- Still uses Dijkstra style BFS (i.e., removing visited edges). However be CAUTION that this problem requires to return ALL shortest paths, so edges shall be removed after all nodes at the current level have all been visited.  If remove an edge immediately after visiting, alternative paths will be missed.
+
+
 **127-Word_ladder**
 - the basic idea is to do Dijkstra's style BFS, i.e., initially making all nodes unvisited and removing visited nodes to avoid cycles; no cache is ever needed
 - there two ways to achive it: 1) search on graph directly which is good for the cases of small edge numbers and long words; 2) search by manipulating characters in words, which is good for the cases of big edge numbers and shorter words.
+
+**128-Longest_consecutive_sequence**
+- use Union/Find
 
 **210-Course_schedule_II**
 - I wrote a fix-point like solution which essentially is the BFS topological sorting but less concise.
@@ -184,5 +191,7 @@ visiting the right child before the left child will be fine.
 - 120-Triangle
 - 124-Binary_tree_max_path_sum
 - 125-Valid_palindrome
+- 129-Sum_root_to_leaf_numbers
+- 130-Surrounded_regions
 - 206-Reverse_linked_list
 - 554-Brick_wall
