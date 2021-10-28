@@ -135,6 +135,29 @@ visiting the right child before the left child will be fine.
 **128-Longest_consecutive_sequence**
 - use Union/Find
 
+**131-Palindrome_partitioning**
+- DP
+- O(N * 2^N): there are total 2^N partitions.  As using DP, we compute each partition once.  To compute a partition, we need to search palindrome, which is O(N).
+
+**132-Palindrome_partitioning_II**
+- DP X DP: DP can be used to compute minCut[0 .. n+1] from minCut[0 .. n] as well as check if a string is palindrome
+- see the comment in the solution file
+
+**135-Candy**
+- children with ratings can be represented below
+```
+          /\
+ /\      /  \_
+/  \__/\/     \
+```
+- the algorithm is to start from each bottom points from left to right.  For each bottom point, propagating to left and right until it is no longer STRICTLY ascending.
+- bottom point is a point such that neither its left nor right neighbor is strictly greater than it.
+- one thing needs to be paid attention is that the value at a peak MAY be updated when be visited at the second time, e.g.,
+```
+Given [1,2,4,3,2,1], we start from bottom index 0, propagate [1,2,4], and assign them values [1,2,3].
+Then we start from the next bottom index 5, propagate [4,3,2,1] from right to left, assign them values [4, 3, 2, 1]. The peak at index 2 should be updated in this case.  In contrast, if the input given is [1,2,3,4,2,1], the peak at index 3 shall not be updated when second visited.
+```
+
 **210-Course_schedule_II**
 - I wrote a fix-point like solution which essentially is the BFS topological sorting but less concise.
 - BFS topological sorting: https://en.wikipedia.org/wiki/Topological_sorting
@@ -193,5 +216,7 @@ visiting the right child before the left child will be fine.
 - 125-Valid_palindrome
 - 129-Sum_root_to_leaf_numbers
 - 130-Surrounded_regions
+- 133-Clone_graph
+- 134-Gas_station
 - 206-Reverse_linked_list
 - 554-Brick_wall
