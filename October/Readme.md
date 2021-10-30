@@ -155,8 +155,38 @@ visiting the right child before the left child will be fine.
 - one thing needs to be paid attention is that the value at a peak MAY be updated when be visited at the second time, e.g.,
 ```
 Given [1,2,4,3,2,1], we start from bottom index 0, propagate [1,2,4], and assign them values [1,2,3].
-Then we start from the next bottom index 5, propagate [4,3,2,1] from right to left, assign them values [4, 3, 2, 1]. The peak at index 2 should be updated in this case.  In contrast, if the input given is [1,2,3,4,2,1], the peak at index 3 shall not be updated when second visited.
+Then we start from the next bottom index 5, propagate [4,3,2,1] from right to left, assign them values [4, 3, 2, 1].
+The peak at index 2 should be updated in this case.  In contrast, if the input given is [1,2,3,4,2,1], the peak at index 3
+shall not be updated when second visited.
 ```
+
+**136-Single_number**
+- use XOR, a number XOR with itself results in zero
+
+**137-Single_number_II**
+- follow the essentionl idea of 136-Single_number such that we invent a bitwise operator "op" such that for any number n,
+```
+n op 0 = n,  n op n = x such that x != 0 && x != n, and n op n op n = 0.
+
+```
+That is saying there are 3 states changing in a cycle.
+- Let the 3 states be 00 01 and 10.  Let b0 be the left-most bit and b1 be the right-most bit of the state. The state changes along an input bit is as follows
+```
+b1  b0  input  b1'  b0'
+0   0     0    0    0
+0   1     0    0    1
+1   0     0    1    0
+0   0     1    0    1
+0   1     1    1    0
+1   0     1    0    0
+
+By observing, b0' := input = 0 -> b0                       b1' := input = 0 -> b1
+                     input = 1 -> ~(b0 ^ b1)                      input = 1 -> b0
+		  := (~input & b0) | (input & ~(b0 ^ b1))      := (~input ^ b1) | (input & b0)		     
+```
+- in addition, this operator should be associative (no time for proof though it should be). the proof is to show that `n op m op n = n op n op m`
+
+
 
 **210-Course_schedule_II**
 - I wrote a fix-point like solution which essentially is the BFS topological sorting but less concise.
