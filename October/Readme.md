@@ -184,9 +184,14 @@ By observing, b0' := input = 0 -> b0                       b1' := input = 0 -> b
                      input = 1 -> ~(b0 ^ b1)                      input = 1 -> b0
 		  := (~input & b0) | (input & ~(b0 ^ b1))      := (~input ^ b1) | (input & b0)		     
 ```
-- in addition, this operator should be associative (no time for proof though it should be). the proof is to show that `n op m op n = n op n op m`
+- in addition, this operator should be associative and communitive (no time for proof though it should be). the proof is to show that `n op m op n = n op n op m`
 
+**139-Word_break**
+- DP and optimization with a map from last character to words in the given dictionary
+- see code comment for detail
 
+**140-Word_break_II**
+- same idea as 139-Word_break
 
 **210-Course_schedule_II**
 - I wrote a fix-point like solution which essentially is the BFS topological sorting but less concise.
@@ -194,7 +199,10 @@ By observing, b0' := input = 0 -> b0                       b1' := input = 0 -> b
 - DFS topological sorting: marking nodes grey when visited but not fully enabled, marking nodes black once fully enabled. Reaching a grey node means a cycle.  Reaching a black node is fine but no need to search again. (Black node is not on stack while grey nodes are on stack).
 
 **241-Different_ways_to_add_parentheses**
-- recursively partition expressions: 
+- recursively partition expressions:
+
+**260-Single_number_III**
+- use xor to reduce all the integers to the xor of the two single numbers.  There must be one bit in the reduced result set to 1 as the two numbers are distinct.  Using any such bit to divide all integers to two groups.  The two single numbers will appear in distinct groups.
 
 **282-Expression_add_operators**
 - this one is a very good execise for coding
@@ -248,5 +256,7 @@ By observing, b0' := input = 0 -> b0                       b1' := input = 0 -> b
 - 130-Surrounded_regions
 - 133-Clone_graph
 - 134-Gas_station
+- 138-Copy_list_with_random_pointer
+- 141-Linked_list_cycle
 - 206-Reverse_linked_list
 - 554-Brick_wall
