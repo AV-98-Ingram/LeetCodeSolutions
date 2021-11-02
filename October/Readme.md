@@ -193,6 +193,9 @@ By observing, b0' := input = 0 -> b0                       b1' := input = 0 -> b
 **140-Word_break_II**
 - same idea as 139-Word_break
 
+**142-Linked_list_cycle_II**
+- the walker and runner methaphor is SMART! see code comment for details
+
 **210-Course_schedule_II**
 - I wrote a fix-point like solution which essentially is the BFS topological sorting but less concise.
 - BFS topological sorting: https://en.wikipedia.org/wiki/Topological_sorting

@@ -19,7 +19,10 @@
    end - walker - 2".  Also not forget the extra step from "end" to
    "pos".  We need to place the two walkers at "start" and
    "walker->next->next->next", respectively, in order for them to meet
-   at "pos" eventually.     
+   at "pos" eventually.
+
+   ALTHOUGH, there is a theorem that needs to be proved "walker must
+   meet with runner before re-visiting any node".
  */
 
 #define Node struct ListNode
