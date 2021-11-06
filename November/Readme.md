@@ -9,6 +9,13 @@
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
 - details can be found on the comment of my solution.
 
+**588-In_memory_file_system**
+- not hard but quite a lot coding
+
+**1289-Minimum_falling_path_sum_II**
+- see comments for detailed description
+- I shall not over-simplify the algorithm
+
 **easy ones**
 - 143-Reorder_list
 - 144-Binary_tree_preorder_traversal
