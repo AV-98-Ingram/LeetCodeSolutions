@@ -12,6 +12,10 @@
 **588-In_memory_file_system**
 - not hard but quite a lot coding
 
+**1239-Maximum_length_of_a_concatenated_string_with_unique_characters**
+- I tried to find advanced solution but failed
+- It turns out that combining 1) simple backtrack and 2) BitSet representation of strings with unique characters is the best solution
+
 **1289-Minimum_falling_path_sum_II**
 - see comments for detailed description
 - I shall not over-simplify the algorithm
