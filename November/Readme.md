@@ -20,9 +20,18 @@
 - see comments for detailed description
 - I shall not over-simplify the algorithm
 
+**1647-Minimum_deletions_to_make_character_frequencies_unique**
+- sorts the original frequencies list and decreases duplicated frequencies to 0 from the greatest to the smallest
+- re-wrote quick-sort. Note that pivot can change after partition.
+
+**1684-Count_the_number_of_consistent_strings**
+- easy. use bit operation for strings consist of unique characters
+
 **easy ones**
 - 143-Reorder_list
 - 144-Binary_tree_preorder_traversal
 - 145-Binary_tree_postorder_traversal
 - 167-Two_sum_II
 - 604-Design_compressed_string_iterator
+- 1304-Find_N_unique_integers_sum_up_to_zero
+- 1448-Count_good_nodes_in_binary_tree
