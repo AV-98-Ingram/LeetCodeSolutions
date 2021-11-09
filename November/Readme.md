@@ -27,6 +27,29 @@
 **1684-Count_the_number_of_consistent_strings**
 - easy. use bit operation for strings consist of unique characters
 
+**1987-Number_of_unique_good_subsequences**
+- I didn't think of this as a DP problem until I saw people saying it is one. Then I figured out the DP pattern.
+-
+```
+Let g(n) be the set of good subseqs out of the n-length prefix of the
+input.  Suppose the (n+1)-th binary is '1'. Also suppose the last 1 we
+saw in the n-length prefix is at x-th place.  That is,
+
+  1 ... 1 0 0 ... 0 1
+        x        (n+1)
+
+For all the good subseqs in g(x-1), adding the (n+1)-th '1' to them
+only results in duplicates made by adding the x-th '1' to them.  On
+the other hand, for any good subseq that are in g(i), x <= i <= n, but
+not g(x-1), adding the (n+1)-th '1' to it results in a new good
+subseq.
+
+Thus, the number of newly added good subseqs by the (n+1)-th '1' can
+be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
+"|g(n+1)| = |g(n)| + delta".  Vice versa for the case where the
+(n+1)-th binary is '0'.
+```
+
 **easy ones**
 - 143-Reorder_list
 - 144-Binary_tree_preorder_traversal
