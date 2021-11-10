@@ -5,6 +5,21 @@
 - use a double linked list and a map from keys to list nodes
 - double link is necessary as we need to connect "prev" and "next" of a just-accessed node and move the node to tail.
 
+**155-Min_stack**
+- Whenever do a push, also push the current minimum value on the stack.  So pop will remove two entries at a time as well.  Entries are group in two in the stack.  Each such pair at place i contains the min through i to the bottom of the stack.
+
+**169-Majority_element**
+- remember Boyer-Moore voting algorithm
+
+**239-Sliding_window_maximum**
+- I was thinking of performing a constant number of operations per window sliding but could not figure out one.
+- Then I was trying to come up with a simple solution with little
+  optimization, which requires to traverse a queue per window sliding
+  in some non-constant steps.  Soon later I realized that this is still O(n) complexity.
+- see comments in the code for details  
+- take away message: sometimes performing non-constant operations per step for n steps in total doesn't make the algorithm not O(n).
+
+
 **460-LFU_Cache**
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
 - details can be found on the comment of my solution.
@@ -54,7 +69,9 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 143-Reorder_list
 - 144-Binary_tree_preorder_traversal
 - 145-Binary_tree_postorder_traversal
+- 157-Read_n_characters_given_read4
 - 167-Two_sum_II
 - 604-Design_compressed_string_iterator
 - 1304-Find_N_unique_integers_sum_up_to_zero
 - 1448-Count_good_nodes_in_binary_tree
+- 1756-Design_most_recently_used_queue
