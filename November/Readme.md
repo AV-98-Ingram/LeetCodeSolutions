@@ -19,6 +19,13 @@
 - see comments in the code for details  
 - take away message: sometimes performing non-constant operations per step for n steps in total doesn't make the algorithm not O(n).
 
+**253-Meeting_rooms_II**
+- I made a similar mistake as what I made for 239. I.e., did not fully
+  think about the most obvious (burtal force) solution. If I think
+  about how sorted meetings shall be organized, I should be able to
+  come up with the priority queue solution.
+- Though I made a graph based solution, it is slow.  
+
 
 **460-LFU_Cache**
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
