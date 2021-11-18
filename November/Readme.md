@@ -26,6 +26,23 @@
   come up with the priority queue solution.
 - Though I made a graph based solution, it is slow.  
 
+**269-Alien_dictionary**
+- my original idea: build graph and constraint solving.  It did make
+  me sweaty in non-recursive DFS cycle detection.  For non-recursive
+  DFS, a node that is visited before and is also on the stack
+  indicates the existence of a cycle.
+
+  Remember: For non-recursive DFS, visied nodes on stack form the path to the current node
+
+- official solution: build graph and topological BFS sorting.  It turns out not faster than my original idea.
+
+**295-Find_median_from_data_stream**
+
+- I used ArrayList to maintain all the data.  I thought as a "list",
+  it would take O(log(n)) time using binary search to insert a new
+  data into ArrayList.  But I was wrong, inserting a data in ArrayList
+  involves elements shifting as they are maintained in arrays under
+  the hood.
 
 **460-LFU_Cache**
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
@@ -78,7 +95,10 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 145-Binary_tree_postorder_traversal
 - 157-Read_n_characters_given_read4
 - 167-Two_sum_II
+- 273-Integer_to_english_words
 - 604-Design_compressed_string_iterator
+- 622-Design_circular_queue
+- 678-Valid_parenthesis_string
 - 1304-Find_N_unique_integers_sum_up_to_zero
 - 1448-Count_good_nodes_in_binary_tree
 - 1756-Design_most_recently_used_queue
