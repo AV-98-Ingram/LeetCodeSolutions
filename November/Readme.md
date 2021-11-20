@@ -51,6 +51,11 @@
 **588-In_memory_file_system**
 - not hard but quite a lot coding
 
+**668-Kth_smallest_number_in_multiplication_table**
+- I only figured out a brutal-force solution.
+- I didn't realize that each row in the table is sorted and to find the number of position k is similar to merge sort all rows.
+
+
 **1239-Maximum_length_of_a_concatenated_string_with_unique_characters**
 - I tried to find advanced solution but failed
 - It turns out that combining 1) simple backtrack and 2) BitSet representation of strings with unique characters is the best solution
@@ -98,7 +103,10 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 273-Integer_to_english_words
 - 604-Design_compressed_string_iterator
 - 622-Design_circular_queue
+- 641-Design_circular_deque
 - 678-Valid_parenthesis_string
+- 981-Time_based_key_value_store
+- 1146-Snapshot_array
 - 1304-Find_N_unique_integers_sum_up_to_zero
 - 1448-Count_good_nodes_in_binary_tree
 - 1756-Design_most_recently_used_queue

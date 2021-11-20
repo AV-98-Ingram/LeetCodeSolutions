@@ -5,6 +5,8 @@ class Solution {
       'p' is the position in the given string 's' and 'l' is the size
       of the parenthesis matching stack.
       
+      Time complexity:  O(n^2) as there are n^2 states total.
+      
     */
     Boolean cache[][];
     
