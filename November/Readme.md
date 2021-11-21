@@ -37,12 +37,14 @@
 - official solution: build graph and topological BFS sorting.  It turns out not faster than my original idea.
 
 **295-Find_median_from_data_stream**
-
 - I used ArrayList to maintain all the data.  I thought as a "list",
   it would take O(log(n)) time using binary search to insert a new
   data into ArrayList.  But I was wrong, inserting a data in ArrayList
   involves elements shifting as they are maintained in arrays under
   the hood.
+
+**384-Shuffle_an_array**
+- classic random shuffle problem
 
 **460-LFU_Cache**
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
@@ -55,6 +57,8 @@
 - I only figured out a brutal-force solution.
 - I didn't realize that each row in the table is sorted and to find the number of position k is similar to merge sort all rows.
 
+**1188-Design_bounded_blocking_queue**
+- simple exercise of wait() and notify()
 
 **1239-Maximum_length_of_a_concatenated_string_with_unique_characters**
 - I tried to find advanced solution but failed
@@ -101,6 +105,9 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 157-Read_n_characters_given_read4
 - 167-Two_sum_II
 - 273-Integer_to_english_words
+- 284-Peeking_iterator
+- 359-Logger_rate_limiter
+- 366-Find_leaves_of_binary_tree
 - 604-Design_compressed_string_iterator
 - 622-Design_circular_queue
 - 641-Design_circular_deque
