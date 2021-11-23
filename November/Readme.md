@@ -46,6 +46,9 @@
 **384-Shuffle_an_array**
 - classic random shuffle problem
 
+**388-Longest_absolute_file_path**
+- I thought of building a tree then compute the longest path. A better idea is to do it on the fly.
+
 **460-LFU_Cache**
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
 - details can be found on the comment of my solution.
