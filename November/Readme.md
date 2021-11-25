@@ -43,11 +43,22 @@
   involves elements shifting as they are maintained in arrays under
   the hood.
 
+**299-Bulls_and_cows**
+- The problem is easy.
+- Take-away message: when processing a stream of data, if the current input causes a
+ counter to increasing, increase the counter then; if the current
+ input causes the same counter to decrease, albeit there is a hard
+ lower bound 0, you could allow it to be decreased to negative and
+ count on future inputs to add it back to be non-negative.
+
 **384-Shuffle_an_array**
 - classic random shuffle problem
 
 **388-Longest_absolute_file_path**
 - I thought of building a tree then compute the longest path. A better idea is to do it on the fly.
+
+**410-Split_array_largest_sum**
+- hard-ass DP but I figured it out. see code comment for detailed explanation.
 
 **460-LFU_Cache**
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
