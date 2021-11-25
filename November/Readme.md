@@ -60,6 +60,9 @@
 **410-Split_array_largest_sum**
 - hard-ass DP but I figured it out. see code comment for detailed explanation.
 
+**418-Sentence_screen_fitting**
+- simple solution timeouts. Then an OK optimization is accepted.
+
 **460-LFU_Cache**
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
 - details can be found on the comment of my solution.
