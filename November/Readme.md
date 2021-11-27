@@ -67,6 +67,16 @@
 - My fastest solution maintains two maps.  A map from keys to nodes and a map from counters to node lists.
 - details can be found on the comment of my solution.
 
+**465-Optimal_account_balancing**
+- the fundamental part that I should master: elaborate all possible
+  groups of a list of numbers (i.e., all possible groups of size 1, of
+  size 2, ... of size #numbers. Worst case complexity is O(n!)).
+- My own theory of group matching is not proved but accepted by LC.
+  And it seems faster than the simpler solution, i.e., recursively
+  try-out all possible matches.  I think the possible supremacy of my
+  solution is that in general case the complexity is O((n/2)!) +
+  O((n/2)!) as numbers are divided into positives and negatives.
+
 **588-In_memory_file_system**
 - not hard but quite a lot coding
 
