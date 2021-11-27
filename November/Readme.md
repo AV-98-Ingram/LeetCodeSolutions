@@ -77,6 +77,16 @@
   solution is that in general case the complexity is O((n/2)!) +
   O((n/2)!) as numbers are divided into positives and negatives.
 
+**489-Robot_room_cleaner**
+- interesting problem
+- One can do DFS for this problem without being given neither the room matrix nor the start coordinates.
+
+**552-Student_attendance_record_II**
+- classic hard-ass DP
+- a take-away message about modulo large numbers with 10^9 + 7: use
+  long type so that I do not have to think about all subtle problem of
+  where has to do modulo first.
+
 **588-In_memory_file_system**
 - not hard but quite a lot coding
 
