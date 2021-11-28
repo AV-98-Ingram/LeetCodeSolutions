@@ -87,6 +87,9 @@
   long type so that I do not have to think about all subtle problem of
   where has to do modulo first.
 
+**562-Longest_line_of_consecutive_one_in_matrix**
+- simple DP
+
 **588-In_memory_file_system**
 - not hard but quite a lot coding
 
@@ -145,6 +148,7 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 284-Peeking_iterator
 - 359-Logger_rate_limiter
 - 366-Find_leaves_of_binary_tree
+- 593-Valid_square
 - 604-Design_compressed_string_iterator
 - 622-Design_circular_queue
 - 641-Design_circular_deque
