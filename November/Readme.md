@@ -147,6 +147,7 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 145-Binary_tree_postorder_traversal
 - 157-Read_n_characters_given_read4
 - 167-Two_sum_II
+- 200-Number_of_islands
 - 273-Integer_to_english_words
 - 284-Peeking_iterator
 - 359-Logger_rate_limiter
@@ -155,6 +156,7 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 604-Design_compressed_string_iterator
 - 622-Design_circular_queue
 - 641-Design_circular_deque
+- 652-Find_duplicate_subtrees
 - 678-Valid_parenthesis_string
 - 981-Time_based_key_value_store
 - 1146-Snapshot_array
