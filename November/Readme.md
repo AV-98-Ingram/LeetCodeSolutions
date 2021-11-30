@@ -93,6 +93,9 @@
 **588-In_memory_file_system**
 - not hard but quite a lot coding
 
+**631-Design_excel_sum_formula**
+- a practice of Java lambda
+
 **668-Kth_smallest_number_in_multiplication_table**
 - I only figured out a brutal-force solution.
 - I didn't realize that each row in the table is sorted and to find the number of position k is similar to merge sort all rows.
