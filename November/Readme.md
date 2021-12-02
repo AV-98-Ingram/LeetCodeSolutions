@@ -96,6 +96,9 @@
 **631-Design_excel_sum_formula**
 - a practice of Java lambda
 
+**664-Strange_printer**
+- hard-ass DP
+
 **668-Kth_smallest_number_in_multiplication_table**
 - I only figured out a brutal-force solution.
 - I didn't realize that each row in the table is sorted and to find the number of position k is similar to merge sort all rows.
@@ -150,6 +153,7 @@ be represented as "delta = |g(n)| - |g(x-1)|".  Consequently,
 - 200-Number_of_islands
 - 273-Integer_to_english_words
 - 284-Peeking_iterator
+- 305-Number_of_islands_II/solution.java
 - 359-Logger_rate_limiter
 - 366-Find_leaves_of_binary_tree
 - 593-Valid_square
