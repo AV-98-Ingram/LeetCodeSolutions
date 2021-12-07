@@ -14,6 +14,9 @@
 -- The best solution is optimized to only iterate the long matching string once.
 -- The subsequences are managed in a bucket.
 
+**833-Find_and_replace_in_string**
+-- wrote a simple one that benefits parallelization
+
 **easy ones**
 -- 690-Employee_importance
 -- 735-Asteroid_collision
