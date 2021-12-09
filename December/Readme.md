@@ -1,44 +1,117 @@
+** Needs revisit
+
+- 407-Trapping_rain_water_II: my BFS is too slow. See my comment in
+  solution2.java, which is a solution I got from the LC discussion
+  board. It is amazing to me though it seems it not fast comparing to
+  other solutions.
+  And a take away mesaage:
+    when dealing with irregular shape (e.g., obstacles or irregular
+    boundaries) in matrix problems, think about BFS. 
+
 **727-Minimum_window_subsequence**
--- brutal force is easy
--- the keep-track-of-the-states approach can be optimized, see comments in the code
+- brutal force is easy
+- the keep-track-of-the-states approach can be optimized, see comments in the code
 
 **745-Prefix_and_suffix_search**
--- use two prefix-trees: one for prefix and one for suffix
--- to get the last set bit of a BitSet, just get its length().
+- use two prefix-trees: one for prefix and one for suffix
+- to get the last set bit of a BitSet, just get its length().
 
 **777-Swap_adjacent_in_LR_string**
--- The key observation is that L is left mover and R is right mover and L
+- The key observation is that L is left mover and R is right mover and L
    and R cannot across each other.
 
 **792-Number_of_matching_subsequences**
--- The best solution is optimized to only iterate the long matching string once.
--- The subsequences are managed in a bucket.
+- The best solution is optimized to only iterate the long matching string once.
+- The subsequences are managed in a bucket.
 
 **833-Find_and_replace_in_string**
--- wrote a simple one that benefits parallelization
+- wrote a simple one that benefits parallelization
 
 **843-Guess_the_word**
--- my idea: first pick any word w and suppose w matches n characters
+- my idea: first pick any word w and suppose w matches n characters
    with the secret.  Then the secret word must be a word that matches
    w with n characters.  So we only need to look at them. Let the set
    of words matches w by n be W.  We then iteratively select a word in
    W to be the new w and repeat.  During the iteration, we keep n
    non-decreasing.
--- In addition, 1) any word that matches w by m such that m > n can be
+- In addition, 1) any word that matches w by m such that m > n can be
    excluded.  Similarly, 2) any word that matches w by l such that l <
    n and is not in W can be excluded.  Note that W may change as n
    increases.  So a word not in an old W may be in a new W. Thus point
    2) here is not senseless.   
--- finally, this is the hint got from a Leetcode user: we can sort the
+- finally, this is the hint got from a Leetcode user: we can sort the
    given word list so that the first and the last words differ the
    most.  This could help us to improve the first pick of w.
 
 **853-Car_fleet**
--- take a way message: 1) when it comes to multiply, be careful with overflow
+- take a way message: 1) when it comes to multiply, be careful with overflow
                        2) when it comes to an (in)-equation involving divisions and precision matters,
 		       	  see if we can transform the (in)-equation to only involve multiplications.
 			  e.g., a/b > c ==> a > b*c
 
+**871-Minimum_number_of_refueling_stops**
+- DP is an overkill for this gas station problem
+- in fact, the best solution is much simpler.  As long as the gas
+tank is never empty, it doesn't matter we refuel at which PAST gas
+station.  For example, we keep track of past gas stations in gas_queue
+and our tank is good enough for travel to the n-th station but not
+enough to the (n+1)-th station.  We only need to pick the largest
+refuel among the gas_queue, increment the number of stops, and
+continue our trip.
+
+**940-Distinct_subsequences_II**
+- I should know how to use DP to deal with subsequences now.
+
+**954-Array_of_doubled_pairs**
+- easy but need to be CAREFUL with 0 as 0 * 2 = 0
+
+**1048-Longest_string_chain**
+- sorting words into length-ordered collections in an PriorityQueue then repeatedly
+looking for the longest chain in this PriorityQueue
+
+**1218-Longest_arithmetic_subsequence_of_given_difference**
+- Maintaining a map during the scan where keys are the expecting next
+   number 'n'.  The map maps each of such 'n' to the MAX length
+   of the subsequence that ends with 'n'.  For example,
+   given
+   [1,2,3, ...} and the diff is -2, the map after scanning '3' is {-1 -> 2, 0 -> 2, 1 -> 2}.
+- When there are multiple subsequences that are expecting the same next 'n', the map keeps the length of the longest one.
+
+**1254-Number_of_closed_islands**
+- easy one but I need to be careful that when two islands merge, either one can turn the other from closed to non-closed.
+
+**1277-Count_square_submatrices_with_all_ones**
+- Brutal force shall be easy.  I added a little optimization: Let dp[i][j]
+  be the known largest square edge of the square whose left top is
+  [i][j].  Once, for example, we computed that dp[i][j] == n, we could
+  simply fill out dp[i .. i+n-1][j .. j+n-1].  Then for any cell "(r,
+  c)", if dp[r][c] has been computed, we could start to compute the
+  next largest square edge from the value of dp[r][c].  But we always
+  have to fille out dp[r .. r + n - 1][c .. c + n -1] once longer edge
+  is discovered.
+  - Why my solution has to fill out dp cells of any new largest square
+  just dicovered?  After I read the real DP solution, we realized that
+  it is because of my "square identifier" choice.  I choose left top
+  as the identifier while the real DP solution chooses right bottom.
+  What's the difference?  When to compute the largest sqaure for the
+  left top identifier (i, j), other (maybe sub-) squares identified by
+  (i + k1, j + k2) for any positive k1 & k2 are unknown.  However, if
+  one is trying to compute the largest square for the right bottom
+  identifier (i, j), other (maybe sub-) squares identified by (i - k1,
+  j - k2) for any positive k1 & k2 are KNOWN!.
+
+**1293-Shortest_path_in_a_grid_with_obstacles_elimination**
+- The simple BFS solution is good enough to memorize for a real interview.
+- However, see my comments in solution2.java, I think there is a
+  non-trivial theorem in this problem for the BFS solution to be
+  correct.
+- I also came up a fixed-point + DP solution that does not require the
+theorem to be true.
+
+**1368-Minimum_cost_to_make_at_least_one_valid_path_in_a_grid**
+- create connected sub-graphs then topological BFS
+
 **easy ones**
--- 690-Employee_importance
--- 735-Asteroid_collision
+- 690-Employee_importance
+- 735-Asteroid_collision
+- 900-RLE_iterator
