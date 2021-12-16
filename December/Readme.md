@@ -107,6 +107,13 @@ looking for the longest chain in this PriorityQueue
 - I also came up a fixed-point + DP solution that does not require the
 theorem to be true.
 
+**1406-Stone_game_III**
+- reminds me of the Ping-Pong defeat of mine.
+- solution.java is the brutal force one, solution2.java is the DP solution
+I came up that computes player's advantage in reverse order, and
+in solution3.java I realized that it only needs to compute one generic
+player's advantage at his/her turn at a position.
+
 **1368-Minimum_cost_to_make_at_least_one_valid_path_in_a_grid**
 - create connected sub-graphs then topological BFS
 
@@ -114,3 +121,4 @@ theorem to be true.
 - 690-Employee_importance
 - 735-Asteroid_collision
 - 900-RLE_iterator
+- 1110-Delete_nodes_and_return_forest
