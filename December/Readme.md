@@ -117,6 +117,21 @@ player's advantage at his/her turn at a position.
 **1368-Minimum_cost_to_make_at_least_one_valid_path_in_a_grid**
 - create connected sub-graphs then topological BFS
 
+**1423-Maximum_points_you_can_obtain_from_cards**
+- there is a word-trap in the description:  "player can take cards
+from head or tail each round" in fact is saying that "player take i
+cards from head and j cards from tail such that i +j = k".  Then the
+problem is a fixed size window moving problem that can be solved by
+simply moving the window k times.
+
+**1499-Max_value_of_equation**
+- The formula `y_i + y_j - (x_j - x_i)` can be converted to `(y_i -
+  x_i) + (y_j + x+j)`, which consists of two independent parts.  Each
+  part associates to a unique coordinate as i < j.  So we can fix the
+  part `(y_j + x_j)` and look for the largest `(y_i -x_i)` by scanning
+  each `(x_j, y_j)` while maintaining all previous `(y_i - x_i)` using
+  a PriorityQueue.
+
 **easy ones**
 - 690-Employee_importance
 - 735-Asteroid_collision
