@@ -132,8 +132,40 @@ simply moving the window k times.
   each `(x_j, y_j)` while maintaining all previous `(y_i - x_i)` using
   a PriorityQueue.
 
+**1509-Minimum-difference_between_largest_and_smallest_value_in_three_moves**
+- Window moving: First to sort the array.  Then try to change numbers
+   at two ends to the numbers in middle so that they become more
+   close.
+
+**1610-Maximum_number_of_visible_points**
+- using atan2(y, x) to get the radian between the vector (x, y) and (+infi, 0)
+- convert radian to degree angle
+- sorting all the angles between a vector and (+infi, 0) then moving
+  the given "angle" window to maximize the observed points.  
+- However, one problem is that, for example, there are two vectors whose
+  angles between (+infi, 0) are 135 and -135, respectively.  It seems
+  that one needs a window of at least size 270 to see both points but
+  in fact the angle between these two vectors are only 90. 
+```
+   vector 1
+     \  |
+      \	|
+       \|
+--------|----------
+       /|
+      / |         
+     /  |
+  vector 2
+```
+- The solution is to, in addition, add a new vector for vector 2 as if
+  it has 135 + 90 degrees.  As the observer's view angle is less than
+  360, it is not possible for both the new vector and vector 2 to be
+  observed at the same time. So there will be no duplication in a fixed
+  view.
+
 **easy ones**
 - 690-Employee_importance
 - 735-Asteroid_collision
 - 900-RLE_iterator
 - 1110-Delete_nodes_and_return_forest
+- 1525-Number_of_good_ways_to_split_a_string 
