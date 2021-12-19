@@ -163,6 +163,49 @@ simply moving the window k times.
   observed at the same time. So there will be no duplication in a fixed
   view.
 
+**1834-Single_threaded_CPU**
+- I used two PriorityQueues, one sorts by task starting time and the
+  other holds all tasks that can be launched at current time sorted by
+  their processing time.  Once the CPU executed one task, we update
+  the current time and move more tasks from the first PriorityQueue to
+  the second one.
+- I feel like a topological BFS will do as well.  The to find the next
+  nodes, it probably will also need to maintain a "current time"
+  variable.
+
+**1937-Maximum_number_of_points_with_cost**
+- At first I came up a straightforward DP solution which takes O(m * n * n) time.
+- Then by reading some LC discussion, I was inspired by that there are
+  sub-problems can also be solved using DP.
+  
+- The key idea to use DP to solve the sub-problem is similar to the
+  idea in <<1499-Max_value_of_equation>>:
+```
+  For each row, fix a column j, we'd like to know how is the best
+  result before j comparing to j.  Suppose k, 0 <= k <= j, is the
+  column on the same row that maximizes
+
+     diff = result[k] - result[j] - (j - k)
+     
+  If we rearrange the formula:
+
+     diff = (result[k] + k) - (result[j] + j)
+
+  We only need to compare result[j] + j with the maximal result[k] + k. When scanning the columns by j, the maximal
+  result[k] + k can be obtained along the scan.
+
+  Similarly, we also need to know how it the best result after j
+  comparing to j.  This can be achived using the asymmeric method.
+```
+Using DP also to solve sub-problems helps to improve the algorithm to
+O(m * n) time.
+- Take away messages are 1) when a DP soluton seems still to slow,
+  think about using DP to solve sub-problems; 2) for problems to
+  obtain the optimal value of some formula like `y_i +/- y_j +/- |x_i
+  - x_j|`, there might be ways to re-arrange the formula to convert
+  the problem to obtain the optimal value of some formula depending on
+  ONLY a single cell.  This would reduce the time complexity from O(m*n) to O(n).
+
 **easy ones**
 - 690-Employee_importance
 - 735-Asteroid_collision
