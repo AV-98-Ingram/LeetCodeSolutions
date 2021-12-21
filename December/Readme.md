@@ -5,7 +5,13 @@
   other solutions.
   And a take away mesaage:
     when dealing with irregular shape (e.g., obstacles or irregular
-    boundaries) in matrix problems, think about BFS. 
+    boundaries) in matrix problems, think about BFS.
+
+**329-Longest_increasing_path_in_a_matrix**
+- I used DFS with memorization of the longest path reaching a node.
+- LC gives a solution that first sorts the nodes by dependency using
+  Onion Peeling algorithm (i.e., iteratively removing leaves), then
+  the answer immediately becomes how many (peeling) levels are there.
 
 **727-Minimum_window_subsequence**
 - brutal force is easy
@@ -212,3 +218,6 @@ O(m * n) time.
 - 900-RLE_iterator
 - 1110-Delete_nodes_and_return_forest
 - 1525-Number_of_good_ways_to_split_a_string 
+- 2007-Find_original_array_from_doubled_array
+- 2013-Detect_squares
+- 2034-Stock_price_fluctuation
