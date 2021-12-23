@@ -13,6 +13,10 @@
   Onion Peeling algorithm (i.e., iteratively removing leaves), then
   the answer immediately becomes how many (peeling) levels are there.
 
+**354-Russian_doll_envelopes**
+- Sort the envelopes in groups by width, then sort heights within each
+  group.  Finally perform DFS on groups.
+
 **727-Minimum_window_subsequence**
 - brutal force is easy
 - the keep-track-of-the-states approach can be optimized, see comments in the code
