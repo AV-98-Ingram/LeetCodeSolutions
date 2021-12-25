@@ -7,6 +7,14 @@
     when dealing with irregular shape (e.g., obstacles or irregular
     boundaries) in matrix problems, think about BFS.
 
+**173-Binary_search_tree_iterator**
+- each node is push on stack once and poped once so armotized operation time complexity is O(n)
+- use a stack to keep track of ancestors
+
+**215-Kth_largest_element_in_an_array**
+- use a Tree-multi-Set to keep k largest then scan the array once.
+- a Tree-multi-Set is a TreeSet whose comparator is simply: a < b ? -1 : 1.
+
 **300-Longest_increasing_subsequence**
 - I came up a O(n*m) DP approach but the best solution given is O(nlogn).
 - the best solution is given by soluion2.java including a proof sketch
@@ -237,6 +245,8 @@ O(m * n) time.
   ONLY a single cell.  This would reduce the time complexity from O(m*n) to O(n).
 
 **easy ones**
+- 162-Find_peak_element
+- 199-Binary_tree_right_side_view
 - 690-Employee_importance
 - 735-Asteroid_collision
 - 900-RLE_iterator
