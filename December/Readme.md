@@ -126,6 +126,9 @@ looking for the longest chain in this PriorityQueue
   identifier (i, j), other (maybe sub-) squares identified by (i - k1,
   j - k2) for any positive k1 & k2 are KNOWN!.
 
+**1284-Minimum_number_of_flips_to_convert_binary_matrix_to_zero_matrix**
+- simple model checking
+
 **1293-Shortest_path_in_a_grid_with_obstacles_elimination**
 - The simple BFS solution is good enough to memorize for a real interview.
 - However, see my comments in solution2.java, I think there is a
