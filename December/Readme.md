@@ -7,6 +7,11 @@
     when dealing with irregular shape (e.g., obstacles or irregular
     boundaries) in matrix problems, think about BFS.
 
+**300-Longest_increasing_subsequence**
+- I came up a O(n*m) DP approach but the best solution given is O(nlogn).
+- the best solution is given by soluion2.java including a proof sketch
+  on its non-obvious correctness.
+
 **329-Longest_increasing_path_in_a_matrix**
 - I used DFS with memorization of the longest path reaching a node.
 - LC gives a solution that first sorts the nodes by dependency using
@@ -16,6 +21,18 @@
 **354-Russian_doll_envelopes**
 - Sort the envelopes in groups by width, then sort heights within each
   group.  Finally perform DFS on groups.
+
+**632-Smallest_range_covering_elements_from_k_lists**
+- As the problem gives a set of order-list of numbers, I quickly
+  thought of merge-sort.  Following the idea, I merge sorted all the
+  numbers, each of which is attched with an ID representing the list
+  it comes from.  Then perform a window slide and match algorithm to
+  find the smallest window.
+
+**659-Split_array_into_consecutive_subsequences**
+- greedy
+- "given list of numbers are ordered" is one of the keys
+- follow the intuitive match process and make use of the ordered property of the given list.
 
 **727-Minimum_window_subsequence**
 - brutal force is easy
