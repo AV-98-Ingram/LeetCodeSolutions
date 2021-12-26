@@ -15,6 +15,12 @@
 - use a Tree-multi-Set to keep k largest then scan the array once.
 - a Tree-multi-Set is a TreeSet whose comparator is simply: a < b ? -1 : 1.
 
+**227-Basic_calculator_II**
+- subtle but not hard
+
+**236-Lowest_common_ancestor_of_a_binary_tree**
+- not hard but think carefully before coding
+
 **300-Longest_increasing_subsequence**
 - I came up a O(n*m) DP approach but the best solution given is O(nlogn).
 - the best solution is given by soluion2.java including a proof sketch
@@ -247,6 +253,7 @@ O(m * n) time.
 **easy ones**
 - 162-Find_peak_element
 - 199-Binary_tree_right_side_view
+- 249-Group_shifted_strings
 - 690-Employee_importance
 - 735-Asteroid_collision
 - 900-RLE_iterator
