@@ -1,4 +1,5 @@
 ** Needs revisit
+- 301-Remove_invalid_parentheses: I hate this problem. Need to practise more
 - 407-Trapping_rain_water_II: my BFS is too slow. See my comment in
   solution2.java, which is a solution I got from the LC discussion
   board. It is amazing to me though it seems it not fast comparing to
@@ -25,6 +26,16 @@
 - I came up a O(n*m) DP approach but the best solution given is O(nlogn).
 - the best solution is given by soluion2.java including a proof sketch
   on its non-obvious correctness.
+
+**314-Binary_tree_vertical_order_traversal**
+- Using PriorityQueue to sort by column and row numbers seems was ok
+  but it in fact is NOT due to non-deterministic order when both colum
+  and row are identical.
+- BFS is easy and fast
+
+**317-Shortest_distance_from_all_buildings**
+- nothing fancy but just BFS with little optimization. See my comments
+  in the code.
 
 **329-Longest_increasing_path_in_a_matrix**
 - I used DFS with memorization of the longest path reaching a node.
@@ -254,6 +265,8 @@ O(m * n) time.
 - 162-Find_peak_element
 - 199-Binary_tree_right_side_view
 - 249-Group_shifted_strings
+- 339-Nested_list_weight_sum
+- 347-Top_k_frequent_elements
 - 690-Employee_importance
 - 735-Asteroid_collision
 - 900-RLE_iterator

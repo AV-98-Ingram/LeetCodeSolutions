@@ -1,0 +1,94 @@
+import java.util.LinkedList;
+import java.util.List;
+
+class Solution {
+
+	public List<String> removeInvalidParentheses(String s) {
+		final int len = s.length();
+		LinkedList<Integer> stack = new LinkedList<>();
+		int deleteCloses = 0, deleteOpens = 0;
+
+		for (int i = 0; i < len; i++) {
+			if (stack.isEmpty()) {
+				if (s.charAt(i) == ')')
+					deleteCloses++;
+				else if (s.charAt(i) == '(')
+					stack.addFirst(i);
+			} else {
+				if (s.charAt(i) == ')')
+					stack.removeFirst();
+				else if (s.charAt(i) == '(')
+					stack.addFirst(i);
+			}
+		}
+		deleteOpens = stack.size();
+		return f(s, 0, 0, deleteCloses, deleteOpens);
+	}
+
+	private List<String> f(String s, int start, int numOpens, int closes2del, int opens2del) {
+		if (closes2del < 0 || opens2del < 0 || numOpens < 0)
+			return null; // invalid case
+
+		List<String> result = new LinkedList<>();
+		final int end = s.length();
+
+		if (start >= end)
+			if (closes2del == 0 && opens2del == 0 && numOpens == 0) {
+				result.add("");
+				return result;
+			} else
+				return null;
+
+		int i = start;
+		StringBuilder sb = new StringBuilder();
+
+		// simply add consecutive letters to "sb":
+		while (i < end && s.charAt(i) != ')' && s.charAt(i) != '(') {
+			sb.append(s.charAt(i));
+			i++;
+		}
+		if (i == end) {
+			if (closes2del == 0 && opens2del == 0 && numOpens == 0) {
+				result.add(sb.toString());
+				return result;
+			} else
+				return null;
+		}
+
+		// process "(" or ")" in a generic way:
+		char paren = s.charAt(i);
+		int toDelete = paren == '(' ? opens2del : closes2del;
+		int numParens = 0;
+
+		while (i < end && s.charAt(i) == paren) {
+			numParens++;
+			i++;
+		}
+
+		int keepParen = numParens > toDelete ? numParens - toDelete : 0;
+
+		for (int j = 0; j < keepParen; j++)
+			sb.append(paren);
+
+		numOpens = paren == ')' ? numOpens - keepParen : numOpens + keepParen;
+
+		numParens -= keepParen;
+	
+		for (int j = 0; j <= numParens; j++) { 
+			List<String> suffixes = f(s, i, paren == '(' ? numOpens + j : numOpens - j,
+					paren == '(' ? closes2del : closes2del - (numParens - j),
+					paren == '(' ? opens2del - (numParens - j) : opens2del);
+
+			if (suffixes != null)
+				for (String sfx : suffixes) {
+					result.add(sb.toString() + sfx);
+				}
+			sb.append(paren);
+		}
+		return result;
+	}
+
+	public static void main(String args[]) {
+		new Solution().removeInvalidParentheses(")(f");
+	}
+}
