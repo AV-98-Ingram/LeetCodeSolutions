@@ -47,6 +47,13 @@
 - Sort the envelopes in groups by width, then sort heights within each
   group.  Finally perform DFS on groups.
 
+**523-Continuous_subarray_sum**
+- I only figured out a brutal force O(n^2) solution
+- the optimal solution takes O(n): it saves modulo-k results of prefix
+  sums.  If two prefix sums at positions i and j (i < j),
+  respectively, have identical modulo result, it means that the sum of
+  the numbers between i and j is a multiple of k.
+
 **632-Smallest_range_covering_elements_from_k_lists**
 - As the problem gives a set of order-list of numbers, I quickly
   thought of merge-sort.  Following the idea, I merge sorted all the
@@ -270,6 +277,8 @@ O(m * n) time.
 - 408-Valid_word_abbreviation
 - 415-Add_strings
 - 426-Convert_binary_search_tree_to_sorted_doubly_linked_list
+- 498-Diagonal_traverse
+- 528-Random_pick_with_weight
 - 690-Employee_importance
 - 735-Asteroid_collision
 - 900-RLE_iterator
