@@ -54,6 +54,9 @@
   respectively, have identical modulo result, it means that the sum of
   the numbers between i and j is a multiple of k.
 
+**560-Subarray_sum_equals_k**
+- be careful with the case of k == 0
+
 **632-Smallest_range_covering_elements_from_k_lists**
 - As the problem gives a set of order-list of numbers, I quickly
   thought of merge-sort.  Following the idea, I merge sorted all the
@@ -61,10 +64,17 @@
   it comes from.  Then perform a window slide and match algorithm to
   find the smallest window.
 
+**636-Exclusive_time_of_functions**
+- similar to the solution of the Stack-Min problem
+
 **659-Split_array_into_consecutive_subsequences**
 - greedy
 - "given list of numbers are ordered" is one of the keys
 - follow the intuitive match process and make use of the ordered property of the given list.
+
+**670-Maximum_swap**
+- be careful with the cases where there are more than one maximum
+  digits on the right for swap.
 
 **727-Minimum_window_subsequence**
 - brutal force is easy
@@ -81,6 +91,9 @@
 **792-Number_of_matching_subsequences**
 - The best solution is optimized to only iterate the long matching string once.
 - The subsequences are managed in a bucket.
+
+**827-Making_a_large_island**
+- nothing but Union-find
 
 **833-Find_and_replace_in_string**
 - wrote a simple one that benefits parallelization
@@ -279,8 +292,12 @@ O(m * n) time.
 - 426-Convert_binary_search_tree_to_sorted_doubly_linked_list
 - 498-Diagonal_traverse
 - 528-Random_pick_with_weight
+- 543-Diameter_of_binary_tree
+- 680-Valid_palindrome_II
 - 690-Employee_importance
 - 735-Asteroid_collision
+- 766-Toeplitz_matrix
+- 791-Custom_sort_string
 - 900-RLE_iterator
 - 1110-Delete_nodes_and_return_forest
 - 1525-Number_of_good_ways_to_split_a_string 
