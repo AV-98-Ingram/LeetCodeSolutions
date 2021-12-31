@@ -3,6 +3,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/*
+  Basic idea: union-find and saves all empty cells adjacent to
+  islands.  Then for each such empty cell, compute the size of the
+  islands it connects to.
+
+  Be CAREFUL with the case where there is no empty cell, either due to
+  no island or full of island.  (note that if there is no island, we
+  cannot find empty cells by searching around islands, though this is
+  a trivial case. :)
+ */
 class Solution {
 
     class DS {

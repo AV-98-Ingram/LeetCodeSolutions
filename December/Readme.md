@@ -7,6 +7,7 @@
   And a take away mesaage:
     when dealing with irregular shape (e.g., obstacles or irregular
     boundaries) in matrix problems, think about BFS.
+- 973-K_closest_points_to_origin: QuickSelect k-th minimum    
 
 **173-Binary_search_tree_iterator**
 - each node is push on stack once and poped once so armotized operation time complexity is O(n)
@@ -299,6 +300,9 @@ O(m * n) time.
 - 766-Toeplitz_matrix
 - 791-Custom_sort_string
 - 900-RLE_iterator
+- 921-Minimum_add_to_make_parentheses_valid
+- 938-Range_sum_of_bst
+- 953-Verifying_an_alien_dictionary
 - 1110-Delete_nodes_and_return_forest
 - 1525-Number_of_good_ways_to_split_a_string 
 - 2007-Find_original_array_from_doubled_array
