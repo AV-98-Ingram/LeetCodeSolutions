@@ -149,6 +149,9 @@ looking for the longest chain in this PriorityQueue
    [1,2,3, ...} and the diff is -2, the map after scanning '3' is {-1 -> 2, 0 -> 2, 1 -> 2}.
 - When there are multiple subsequences that are expecting the same next 'n', the map keeps the length of the longest one.
 
+**1249-Minimum_remove_to_make_valid_parentheses**
+- use a stack to find out the indices of "extra" close and open parenthesis and delete them.
+
 **1254-Number_of_closed_islands**
 - easy one but I need to be careful that when two islands merge, either one can turn the other from closed to non-closed.
 
@@ -213,6 +216,9 @@ simply moving the window k times.
    at two ends to the numbers in middle so that they become more
    close.
 
+**1570-Dot_product_of_two_sparse_vectors**
+- when you found one of the vector is dense, use binary search
+
 **1610-Maximum_number_of_visible_points**
 - using atan2(y, x) to get the radian between the vector (x, y) and (+infi, 0)
 - convert radian to degree angle
@@ -239,6 +245,10 @@ simply moving the window k times.
   observed at the same time. So there will be no duplication in a fixed
   view.
 
+**1650-Lowest_common_ancestor_of_a_binary_tree_III**
+- Once the two nodes are at the same depths d, one can easily find
+  their common ancestor in at most d steps.
+
 **1834-Single_threaded_CPU**
 - I used two PriorityQueues, one sorts by task starting time and the
   other holds all tasks that can be launched at current time sorted by
@@ -248,6 +258,9 @@ simply moving the window k times.
 - I feel like a topological BFS will do as well.  The to find the next
   nodes, it probably will also need to maintain a "current time"
   variable.
+
+**1891-Cutting_ribbons**
+- binary search for the proper maximum ribbon length
 
 **1937-Maximum_number_of_points_with_cost**
 - At first I came up a straightforward DP solution which takes O(m * n * n) time.
@@ -303,8 +316,10 @@ O(m * n) time.
 - 921-Minimum_add_to_make_parentheses_valid
 - 938-Range_sum_of_bst
 - 953-Verifying_an_alien_dictionary
+- 1047-Remove_all_adjacent_duplicates_in_string
 - 1110-Delete_nodes_and_return_forest
-- 1525-Number_of_good_ways_to_split_a_string 
+- 1525-Number_of_good_ways_to_split_a_string
+- 1762. Buildings With an Ocean View
 - 2007-Find_original_array_from_doubled_array
 - 2013-Detect_squares
 - 2034-Stock_price_fluctuation
