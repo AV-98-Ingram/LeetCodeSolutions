@@ -83,6 +83,28 @@ So we need to update i, j, and "sum":
    s[i .. j-1], where i and j hold the updated value. 
 ```
 
+**767-Reorganize_string**
+- Try to place all the characters in the input string in following way:
+-- 1. Sorting the characters in the input	by the number of their appearances.
+-- 2. Suppose the character c of the maximum appearances appears n times.
+      Also suppose the string has length m.  By placing c first, we can create n separated spaces:
+```
+c ... c ... c ...   (dots denotes the separated space)
+```
+-- 3. To make sure there is no two c's are adjacent to each other, we
+   need to put other characters into the first n-1 separated
+   spaces. So if (m - n) < n - 1. We can do nothing but return "".
+-- 4. Instead, once (m - n) >= n - 1, we can always find at least one
+   valid result.  This could be achieved by place the rest of the
+   characters in a round-robin style in the n separated spaces.   
+   For any other character that has multiple appearances, we can
+   separate them because their number of appearances is no greater
+   than n.
+
+
+**828-Count_unique_characters_of_all_substrings_of_a_given_string**
+- O(n^2) solution is easy see solution.java and solution2.java
+- O(n) solution is hard ass. See comments in solution3.java
 
 **easy ones**
 - 387-First_unique_character_in_a_string
