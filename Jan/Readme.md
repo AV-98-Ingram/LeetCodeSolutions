@@ -88,9 +88,7 @@ So we need to update i, j, and "sum":
     - 1. Sorting the characters in the input    by the number of their appearances.
     - 2. Suppose the character c of the maximum appearances appears n times.
       Also suppose the string has length m.  By placing c first, we can create n separated spaces:
-```
-c ... c ... c ...   (dots denotes the separated space)
-```
+      `c ... c ... c ...   (dots denotes the separated space)`
     - 3. To make sure there is no two c's are adjacent to each other, we
          need to put other characters into the first n-1 separated
          spaces. So if (m - n) < n - 1. We can do nothing but return "".
@@ -125,24 +123,20 @@ c ... c ... c ...   (dots denotes the separated space)
 - There are three key ideas in this problem
     - 1. The same basic idea as Problem 828: counting each number for its appearances in sub-arrays where it is the min.
     - 2. The different part is that there is no "easy" way to find the left and right bounds for each array element a[i].
-         To find the bounds of each element, we need to scan the array twice: left -> right and left <- right.
-```	 
-	 For each element a[i], its left bound is a[i-1] if a[i-1] < a[i] or recursively,
-	 the left bound of a[i-1], the left bound of the left bound of a[i-1], ....
-	 Vice versa for the right bound.
-```
+         To find the bounds of each element, we need to scan the array twice: left -> right and left <- right:
+        - For each element a[i], its left bound is a[i-1] if a[i-1] < a[i] or recursively,
+	  the left bound of a[i-1], the left bound of the left bound of a[i-1], ....
+	  Vice versa for the right bound.
 
     - 3. For a subarray that has multiple min numbers, only one min
       number shall be counted.  So we could choose to always count the
       last (right-most) min.  To achieve this, we define left and
       right bounds of a[i] by
-```
-  left bound:  the max k among [0, i) such that a[k] < a[i], or -1 if no such k.
-  right bound: the min k among (i, len) such that a[k] <= a[i], or len if no such k.
-```
-So for a[i], in any sub-array where it counts, the last element in the
-sub-array is strictly less than a[i]. So we a[i] is the last min that
-will be counted if there are multiple mins.
+         - left bound:  the max k among [0, i) such that a[k] < a[i], or -1 if no such k.
+         - right bound: the min k among (i, len) such that a[k] <= a[i], or len if no such k.  
+    So for a[i], in any sub-array where it counts, the last element in the
+    sub-array is strictly less than a[i]. So we a[i] is the last min that
+    will be counted if there are multiple mins.
 
 **easy ones**
 - 387-First_unique_character_in_a_string
