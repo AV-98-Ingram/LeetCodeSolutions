@@ -138,5 +138,32 @@ So we need to update i, j, and "sum":
     sub-array is strictly less than a[i]. So we a[i] is the last min that
     will be counted if there are multiple mins.
 
+**909-Snakes_and_ladders**
+- simply do BFS
+
+**926-Flip_string_to_monotone_increasing**
+- My solution:
+  
+  First, we could ignore the prefix of the given string that are all '0's.
+  Similarly, we could ignore the suffix of the given string that are all '1's.
+  So lets say the segment we need to look into is s[start .. end].
+
+  Suppose we know how many '1's are there in s[start .. end], denoted
+  `Ones(start, end)`. This can be done by scan the string once.
+
+  Then we look at s[end], if it is '1', we can simply keep it as it is
+  then continue to look at s[start .. end-1] with the number of '1's
+  decrements.   If s[end] is '0', we have to compare the two choices:
+    1. Keeping '0' and changing all '1's in s[start .. end] to '0'.  It takes `Ones(start, end)` flips.
+    2. Flip it to '1' and continue to look at s[start .. end-1].
+
+  Choice 1 is a constant step and choice 2 takes recursion. Total time complexity is O(n).
+
+- LC gives a DP solution using prefix sums, which essentially is
+  similar to mine.  Prefix sum of the prefix s[0 .. i] tells you how
+  many ones are there.  With the prefix sums information, the DP is
+  simple.
+
+
 **easy ones**
 - 387-First_unique_character_in_a_string
