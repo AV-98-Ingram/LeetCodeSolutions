@@ -1,3 +1,51 @@
+**Revisit**
+- 992-Subarrays_with_k_different_integers
+
+    - I got that this is a window sliding problem.  I think I also got
+      the intuition right: move the right pointer of the window step
+      by step; in each step, if there are k unique numbers, we count the
+      number of good subarrays ending at the right pointer.
+
+      But I did not figure out an O(n) algorithm.  The following is
+      what I got from LC:
+
+     Maining three pointers, left `l`, right `r` and middle `m`, which
+     are all initially 0.  Enlarge the window by moving `r` step by
+     step.  In each step, if there are k unique numbers, we move `m`
+     to the place such that the window `[m, r]` is the minimum window
+     containing k unique numbers.  Then, we can add the good
+     sub-arrays ending at `r`, i.e., `m - l + 1`.  In each step, once
+     there are k+1 unique numbers, we know how to shrink the window,
+     i.e., move `l` and `m` to `m+1`.  For example, the input is
+     "1,2,3,1,2,4" and k = 3.
+```
+   1   2   3   1   2   4
+   |
+ l,m,r
+
+   1   2   3   1   2   4
+   |       |
+ l,m       r                 // m stays, and we count good subarrays ending at r: (m-l) + 1 = 1
+
+   1   2   3   1   2   4
+   |   |       |
+   l   m       r             // m moves, and we count good subarrays ending at r: (m-l) + 1 = 2, i.e., [1 2 3 1] & [2 3 1]
+
+   1   2   3   1   2   4
+   |       |       |
+   l       m       r         // m moves, and we count good subarrays ending at r: (m-l) + 1 = 3, i.e., [1 2 3 1 2], [2 3 1 2], & [3 1 2]
+
+   1   2   3   1   2   4
+   |       |           |
+   l       m           r     // now there are 4 unique numbers, we need to update l and m to shink the window
+
+   1   2   3   1   2   4
+               |       |
+              l,m      r     // note that there are again k unique numbers, we need to count the sun-arrays (m - l) + 1 = 1   
+```
+   
+
+
 **207-Course_schedule**
 - topological BFS
 
@@ -167,3 +215,4 @@ So we need to update i, j, and "sum":
 
 **easy ones**
 - 387-First_unique_character_in_a_string
+- 937-Reorder_data_in_log_files
