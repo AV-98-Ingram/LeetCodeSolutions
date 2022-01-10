@@ -212,7 +212,15 @@ So we need to update i, j, and "sum":
   many ones are there.  With the prefix sums information, the DP is
   simple.
 
+**1041-Robot_bounded_in_circle**
+- I thought the ONLY condition for circling is that each repetition
+  of the instructions turns a non-zero (non-360) degree in a
+  direction.  
+- By running tests, I realized the second condition: each repetition
+  of the instructions turns no degree but goes back to (0, 0).
+
 
 **easy ones**
 - 387-First_unique_character_in_a_string
 - 937-Reorder_data_in_log_files
+- 994-Rotting_oranges
