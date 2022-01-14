@@ -219,8 +219,50 @@ So we need to update i, j, and "sum":
 - By running tests, I realized the second condition: each repetition
   of the instructions turns no degree but goes back to (0, 0).
 
+**1135-Connecting_cities_with_minimum_cost**
+- Use greedy algorithm to always pick shortest paths among the rest; and 
+- Use Union-Find to connect cities after picking shortest paths.
+
+**1606-Find_servers_that_handled_most_number_of_requests**
+- This one is a good problem.  Brutal force is easy but optimized one is hard.
+- I was trying to
+    - maintaining servers in a Heap by there free time so that I can
+      quickly get available ones but it takes O(n) to pick the nearest
+      one to `i%k` among the availables      
+    - or, maintaining tasks in a Heap so that I can assign a future
+      task to a server which is not free for the current
+      task. However, this is wrong.
+      
+- the optimized solution is learned from LC.  Basically, it separates
+  servers into two groups: Busies and Availables.  Busies are
+  maintained in a Heap of pairs, each pair comprises the free time and
+  the ID of the server.  Availables are maintained in a Heap of server
+  IDs.  Initially, all servers are in Availables.  To handle job i,
+  one first put all Busy servers that are available for job i back to
+  Availables.  This is quick as Busies are in a Heap.  Then one can
+  quickly find the nearest one to i%k in Availables.  Finally the
+  server is removed from Availables, updated with new free time w.r.t
+  job i, and added to Busies.
+
+  Moving servers from Busies to Availables w.r.t job `i` takes
+  amortized O(logk).  Because if the worst case happens that all K
+  servers are in Busies and are available to job `i`, it takes
+  O(klogk) this time but there will be at most 1 server in Busies for
+  the next job.
+- Take away message: when I need to select an element from a
+  collection with respect to 2 different properties of elements, think
+  about separate the collection into two group.
+
+
+**1740-Find_distance_in_a_binary_tree**
+- Another problem of "finding two nodes under a tree", typically,
+  just consider the two cases:
+    - one node is the ancestor of another node
+    - there is an LCA of the two nodes.
+- This one has a simple special case: return 0 immediatelt if `p == q`
 
 **easy ones**
 - 387-First_unique_character_in_a_string
 - 937-Reorder_data_in_log_files
 - 994-Rotting_oranges
+- 1732-Find_the_highest_altitude
