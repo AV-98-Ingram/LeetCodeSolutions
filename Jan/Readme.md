@@ -18,6 +18,7 @@
      there are k+1 unique numbers, we know how to shrink the window,
      i.e., move `l` and `m` to `m+1`.  For example, the input is
      "1,2,3,1,2,4" and k = 3.
+     
 ```
    1   2   3   1   2   4
    |
@@ -43,12 +44,14 @@
                |       |
               l,m      r     // note that there are again k unique numbers, we need to count the sun-arrays (m - l) + 1 = 1   
 ```
+
 - 730-Count_different_palindromic_subsequences
     - this is one is a hard-ass
     
     - the main idea is to recursively to `count(s, start, end)` with
       memorization, where `count(s, start, end)` means the number of
-      palindromic subsequences in `s[start .. end]`    
+      palindromic subsequences in `s[start .. end]`
+      
 ```
   count(s, start, end) =
     s[start] != s[end] -> count(s, start+1, end) + count(s, start, end-1) - count(s, start+1, end-1)
@@ -58,6 +61,7 @@
 			| s[start+1 .. end-1] contains multiple s[start] -> count(s, start+1, end-1) * 2 - count(s, innerStart+1, innerEnd-1),
 			  where innerStart and innerEnd are the first and the last s[start] appearances in s[start+1 .. end-1].
 ```
+
     - some explanation:    
         - For a string "a x .. y b" where first and last differ,
 	  itself cannot form a palindrome so we won't count itself.
