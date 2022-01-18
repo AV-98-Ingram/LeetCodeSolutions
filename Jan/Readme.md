@@ -43,7 +43,39 @@
                |       |
               l,m      r     // note that there are again k unique numbers, we need to count the sun-arrays (m - l) + 1 = 1   
 ```
-   
+- 730-Count_different_palindromic_subsequences
+    - this is one is a hard-ass
+    
+    - the main idea is to recursively to `count(s, start, end)` with
+      memorization, where `count(s, start, end)` means the number of
+      palindromic subsequences in `s[start .. end]`    
+```
+  count(s, start, end) =
+    s[start] != s[end] -> count(s, start+1, end) + count(s, start, end-1) - count(s, start+1, end-1)
+  | s[start] == s[end] ->
+                          s[start+1 .. end-1] contains no s[start] -> count(s, start+1, end-1) * 2 + 2
+                        | s[start+1 .. end-1] contains one s[start] -> count(s, start+1, end-1) * 2 + 1
+			| s[start+1 .. end-1] contains multiple s[start] -> count(s, start+1, end-1) * 2 - count(s, innerStart+1, innerEnd-1),
+			  where innerStart and innerEnd are the first and the last s[start] appearances in s[start+1 .. end-1].
+```
+    - some explanation:    
+        - For a string "a x .. y b" where first and last differ,
+	  itself cannot form a palindrome so we won't count itself.
+	  Therefore, we recursively look at the prefix "a x...y" as
+	  well as the suffix "x ...y b".  But when count palindrome
+	  subseqs in "a x...y" and "x...y b", we count "x...y"
+	  twice. So we subtract the count of "x .. y".	  
+        - For a string "a x...y a" where first and last are identical,
+          itself is a palindrome.  So any palindrome subseq `s` in "x
+          ... y" will count, as well as `"a s a"`.  That's `count("x
+          ... y") * 2`.  In addition, if 'a' is not in "x .. y", we
+          have both "aa" and "a".  If there are at least 2 appearances
+          of 'a' in "x ... y", suppose "x ... y" has the form "x ... a
+          S a .. y" where the two 'a's are the first and last 'a' in
+          it and "S" is a substring.  Then for any palindrome subseq
+          `s` in "S", we will count `"a s a"` twice by `count("x ... y")
+          * 2`. Thats way we eventually subtract ``count(S)`.
+
 
 
 **207-Course_schedule**
@@ -75,6 +107,9 @@ meaning that `a[start ...]` will increase by `incr` and `a[end+1 ...]`
 will decrease by `incr`.  They together simply mean that the range
 a[start .. end] will increase by `incr`.  We just need to do such mark
 for each "update" record and scan the result array once at final.
+
+**428-Serialize_and_deserialize_n-ary_Tree**
+- pure engineering effort, easy
 
 **472-Concatenated_words**
 - Build a Trie from shortest word to longest word.  During the build
@@ -219,9 +254,32 @@ So we need to update i, j, and "sum":
 - By running tests, I realized the second condition: each repetition
   of the instructions turns no degree but goes back to (0, 0).
 
+**1111-Maximum_nesting_depth_of_two_valid_parentheses_strings**
+- Simple idea: We call a substring `s` in the given string a
+  "parenthesis group", if `s` does NOT enclosed by any parenthesis in
+  the given string.  Then for each "parenthesis group", we count the
+  depth `D` in the first scan, and extract a pair of parenthesis of
+  depth less than or equal to `D/2` to another string in the second
+  scan.
+
 **1135-Connecting_cities_with_minimum_cost**
 - Use greedy algorithm to always pick shortest paths among the rest; and 
 - Use Union-Find to connect cities after picking shortest paths.
+
+**1473-Paint_house_III**
+- backtrack + state caching, passed through slow
+- DP solution takes O(m * n * target) complexity but faster
+    - Basically, dp[i][t][c] is the min cost of painting houses[0 .. i] in t groups and houses[i] has color c.
+    - The transition is not hard:
+    ```
+    dp[i][t][c] = Min(dp[i-1][t][c], Min(dp[i-1][t-1][0 .. c, c .. n-1]))
+    ```
+    - of course the transition is twisted with the fact that some houses already painted
+    - we also need to save the minimum color in `mins[i][t]` such that `dp[i][t][mins[i][t]] = Min(dp[i][t][*])`
+      otherwise, the algorithm goes O(m * n^2 * target)
+    - in fact, we save the minimum and second minimum in case the minimum choice conflicts with the color of the right neighbor
+- Last but not the least, I really need to be careful with TreeSet.
+  WHENEVER USING TreeSet, think about duplication problem.
 
 **1606-Find_servers_that_handled_most_number_of_requests**
 - This one is a good problem.  Brutal force is easy but optimized one is hard.
