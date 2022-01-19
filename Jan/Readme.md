@@ -235,8 +235,7 @@ foreach (arr[i], arr[j]) where i > j
   the case that `dp[j][next] = dp[i][j]+1` goes before `dp[i][j]`
   being updated.  
 - This DP idea comes from my first intuitive thought. Roughly, scan
-  `arr` one by one and maintain a state.  The state comprises `arr[i]
-  + arr[j] -> fibo subseqs whose next are arr[i] + arr[j]` pairs.  For
+  `arr` one by one and maintain a state.  The state comprises `arr[i] + arr[j] -> fibo subseqs whose next are arr[i] + arr[j]` pairs.  For
   each newly scanned `arr[k]`, update the state by processing `(arr[i] + arr[k])` for each already scanned `arr[i]`.
 
 **907-Sum_of_subarray_minimums**
