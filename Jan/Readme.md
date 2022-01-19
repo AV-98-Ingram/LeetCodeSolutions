@@ -82,6 +82,18 @@
 
 
 
+**192-Word_frequency (bash script problem)**
+- solution: `tr -s ' ' '\n' < words.txt | sort | uniq -c | sort -r | awk '{print $2 " " $1}'`
+    - `tr -s ' ' '\n'`: transforms all white spaces ' ' to new line '\n' and SQUEEZE multiple consecutive '\n's into just one.
+    - `sort` : sort lines in lexicographical order; the option `-r` means sort in reverse order
+    - `uniq -c` : report or filter out repeated lines in a file.  If identical lines are not consecutive, they are not considered unique.
+                 The option `-c` places the number of repeats in front of each unique line.		 
+    - `awk 'pattern{action}'`:  performs an `action` on a text matched the `pattern`.  A missing pattern means always match.
+                                Each line by default is separated by white spaces. One can use `$1, $2,...` to refer to the
+				first, second,... separated fields.
+                                One can also assign regex to a special variable FS using the option `-v FS=regex` to specify
+				the separator.
+
 **207-Course_schedule**
 - topological BFS
 
@@ -206,6 +218,27 @@ So we need to update i, j, and "sum":
   left child of a, we only need to traverse the right child of a, and vice verse.
 
 
+**873-Length_of_longest_fibonacci_subsequence**
+- a DP problem.  Let `dp[i][j]` be the max length of fibo-subseq that
+  ends with `arr[i]` and `arr[j]`.  Then we compute for all these
+  cells by
+
+```
+foreach (arr[i], arr[j]) where i > j
+  next := arr[i] + arr[j];
+  if (next = arr[k])
+     dp[j][k] = max(dp[i][j] + 1, dp[j][k]);
+```
+
+- correctness justification: `dp[i][j]` is always computed before
+  `dp[j][next]` so long as `i < j < next`. So it is not possible for
+  the case that `dp[j][next] = dp[i][j]+1` goes before `dp[i][j]`
+  being updated.  
+- This DP idea comes from my first intuitive thought. Roughly, scan
+  `arr` one by one and maintain a state.  The state comprises `arr[i]
+  + arr[j] -> fibo subseqs whose next are arr[i] + arr[j]` pairs.  For
+  each newly scanned `arr[k]`, update the state by processing `(arr[i] + arr[k])` for each already scanned `arr[i]`.
+
 **907-Sum_of_subarray_minimums**
 - There are three key ideas in this problem
     - 1. The same basic idea as Problem 828: counting each number for its appearances in sub-arrays where it is the min.
@@ -269,6 +302,25 @@ So we need to update i, j, and "sum":
 **1135-Connecting_cities_with_minimum_cost**
 - Use greedy algorithm to always pick shortest paths among the rest; and 
 - Use Union-Find to connect cities after picking shortest paths.
+
+**1229-Meeting_scheduler**
+- Sorting `slots1` and match each slot `s1` in `slots1` in order with
+  "may-overlap" slot `s2` in `slots2` in order.  The slots in `slots2`
+  "may-overlap" with `s1` are visually like the following
+  
+```
+s1:     [        slot1         ]
+      [ s2_1 ] [ s2_2 ] ...  [s2_n]
+```
+
+- Formally, suppose all slots in `slots2` are sorted.  Let `start(s)`
+  be the start time and `end(s)` be the end time of a slot `s`, resp.
+    - `s2_1` is the one that `start(s2_1) < start(s1)` if exists;
+    - `s2_2, ..., s2_{n-1}` are the ones that are FULLY overlapped with `s1`;
+    - `s2_n` is the one that `start(s2_n) < end(s1) && end(s2_n) >= end(s1)` if exists    
+- To quickly find all such "may-overlap" slots for each `s1`, we put
+  all slots in `slots2` in a BSTree. 
+  
 
 **1473-Paint_house_III**
 - backtrack + state caching, passed through slow
