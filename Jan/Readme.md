@@ -62,6 +62,7 @@
 			  where innerStart and innerEnd are the first and the last s[start] appearances in s[start+1 .. end-1].
 ```
 
+-
     - some explanation:    
         - For a string "a x .. y b" where first and last differ,
 	  itself cannot form a palindrome so we won't count itself.
@@ -77,8 +78,7 @@
           of 'a' in "x ... y", suppose "x ... y" has the form "x ... a
           S a .. y" where the two 'a's are the first and last 'a' in
           it and "S" is a substring.  Then for any palindrome subseq
-          `s` in "S", we will count `"a s a"` twice by `count("x ... y")
-          * 2`. Thats way we eventually subtract ``count(S)`.
+          `s` in "S", we will count `"a s a"` twice by `count("x ... y") * 2`. Thats way we eventually subtract `count(S)`.
 
 
 
