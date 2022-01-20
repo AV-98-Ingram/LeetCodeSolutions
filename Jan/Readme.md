@@ -198,6 +198,30 @@ So we need to update i, j, and "sum":
         separate them because their number of appearances is no greater
         than n.
 
+**795-Number_of_subarrays_with_bounded_maximum**
+- At first I thought this one is similar to 828: for each element in
+  range [left, right] count the subarrays where the element is max.
+  Need to be careful with duplicated elements: when looking for two
+  (exclusive) bounds of a subarray for an element `e`, we must set one
+  bound to be strictly less than `e` and the other bound be less than
+  or equal to `e`.  Otherwise, we will count some subarrays more than
+  once.  For example,
+    - Suppose we fix a array element `a[i]` in range and find that
+      subarray `[a[i], ..., a[j]]` is a valid one where `a[i]` is the
+      max.  If `a[i] == a[j]` (and nothing else in it equals to
+      `a[i]`), we must count this subarray only once either at the
+      time when we fix `a[i]` or when we fix `a[j]` but not both.
+- HOWEVER, the solution above takes O(N^2).
+- IN FACT, this problem can be semantically simplified by rephrasing
+  it: "For a range `[left, right]`, count all the subarrays where
+  contains at least one element in range and nothing greater than
+  `right`".  
+- Then we can use DP: Let `dp[i]` be the number of valid subarrays
+  ending at index `i`.
+    - `dp[i] = dp[i-1]` if  `a[i] < left`
+    - `dp[i] = 0` if  `a[i] > right`, and we update the left bound `lb` to `i`.
+    - `dp[i] = i - lb` otherwise
+
 **828-Count_unique_characters_of_all_substrings_of_a_given_string**
 - O(n^2) solution is easy see solution.java and solution2.java
 - O(n) solution is hard ass. See comments in solution3.java
