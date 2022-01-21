@@ -42,6 +42,7 @@
   data into ArrayList.  But I was wrong, inserting a data in ArrayList
   involves elements shifting as they are maintained in arrays under
   the hood.
+- Use two priority queues  
 
 **299-Bulls_and_cows**
 - The problem is easy.

@@ -102,6 +102,25 @@
 - optimization: delete the path to a found word in the prefix tree IFF
   no other word is sharing the path
 
+**316-Remove_duplicate_letters**
+- I wrote a guided backtrack algorihtm but is too slow.
+- LC provides a greedy algorithm. The basic idea is trying to keep a
+  smaller character at its appeared as-left-as-possible position `p`.
+  The position `p` must be 1) greater than all positions of unique
+  letters that have already been processed and kept; and 2) less than
+  the last appeared positions of all unprocessed unique letters.
+-  For example:
+    - Given "bcabc",  we have 'a' appears at {2}, 'b' appears at {0, 3}, and 'c' appears at {1, 4}.
+    - To be greedy, we first try to keep 'a':
+        - 'a' at 2 satisfies condition 1 as there is no already processed letters.
+        - 'a' at 2 satisfies condition 2 as 2 < {3, 4}
+    - Then we try to keep 'b'
+        - 'b' at 0 does not satisfy condition 1
+	- 'b' at 3 satisifies condition 1 as 3 > 2
+	- 'b' at 3 satisifies condition 2 as 3 < 4
+    - Similarly, we will keep 'c' at place 4.
+
+
 **348-Design_tic_tac_toe**
 - Simple solution: look at 8 neighbors each step, worst case O(n) complexity per move
 - Advanced solution: we only need to count how many moves each play
