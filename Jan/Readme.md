@@ -102,6 +102,16 @@
 - optimization: delete the path to a found word in the prefix tree IFF
   no other word is sharing the path
 
+**277-Find_the_celebrity**
+- Brutal force with collecting non-celebrities and avoid test between two non-celebrities work fine but hard to compute time complexity.
+- O(n) solution is based on the idea that
+    -  1. Initially 0 is a celeb candidate
+    -  2. For each i in order i
+        - if `knows(celebCand, i),celebCand := i`
+	- if `!knows(celebCand, i), we continue to test knows(celebCand, i+1) as i must not be a celebrity.`
+	- Loop invariant:  `Forall k. 0 <= k < i ==> k != celebCand ==> k is Not celebrity`
+    -  3. Thus by the end, there is only one celeb candidate.	
+
 **316-Remove_duplicate_letters**
 - I wrote a guided backtrack algorihtm but is too slow.
 - LC provides a greedy algorithm. The basic idea is trying to keep a
@@ -143,6 +153,13 @@ will decrease by `incr`.  They together simply mean that the range
 a[start .. end] will increase by `incr`.  We just need to do such mark
 for each "update" record and scan the result array once at final.
 
+**403-Frog_jump**
+- BFS with seen state caching.
+- Time complexity: O(N^2).  Consider each stone a node in a graph. In
+  worst case, every stone[i] may have an directed edge to stone[j] for
+  every i < j. Thats nearly N^2. BFS with state caching makes sure
+  each edge is visied only once.
+
 **428-Serialize_and_deserialize_n-ary_Tree**
 - pure engineering effort, easy
 
@@ -161,6 +178,17 @@ for each "update" record and scan the result array once at final.
 
 **642-Design_search_autocomplete_system**
 - The key idea is to use Trie.
+
+**675-Cut_off_trees_for_golf_event**
+- Keep use BFS to travel from shorter tree to higher tree.
+- Keep forgetting that DFS is complicated especially in finding
+  minimal path problems:
+    - There are two collections to maintain: `onPath (stack)` and `visited`
+    - `onPath` needs to be push and pop, respectively, when move forward and backtrack
+    - to avoid cycle, one needs to test if a new node is already `onPath`
+    - a node can only be considered `visited` if all its children have been `visited`.
+        - For example,  if we hit a cycle over every child node, we backtrack but will not mark the node `visited`.
+
 
 **696-Count_binary_substrings**
 - This one is quite hard. The base of the idea is to sum up elements
