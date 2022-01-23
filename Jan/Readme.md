@@ -229,6 +229,11 @@ So we need to update i, j, and "sum":
    s[i .. j-1], where i and j hold the updated value. 
 ```
 
+**706-Design_hashMap**
+- Remember that when resizing the separate-chaining hashmap, hashcode
+  of all existing keys need to be re-computed.
+  
+
 **767-Reorganize_string**
 - Try to place all the characters in the input string in following way:
     - 1. Sorting the characters in the input    by the number of their appearances.
@@ -446,7 +451,9 @@ s1:     [        slot1         ]
 - This one has a simple special case: return 0 immediatelt if `p == q`
 
 **easy ones**
+- 202-Happy_number
 - 387-First_unique_character_in_a_string
 - 937-Reorder_data_in_log_files
+- 988-Smallest_string_starting_from_leaf
 - 994-Rotting_oranges
 - 1732-Find_the_highest_altitude
