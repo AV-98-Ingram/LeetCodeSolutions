@@ -374,6 +374,10 @@ foreach (arr[i], arr[j]) where i > j
   depth less than or equal to `D/2` to another string in the second
   scan.
 
+**1152-Analyze_user_website_visit_pattern**
+- need to read the problem description carefully
+- brutal force
+
 **1135-Connecting_cities_with_minimum_cost**
 - Use greedy algorithm to always pick shortest paths among the rest; and 
 - Use Union-Find to connect cities after picking shortest paths.
@@ -396,7 +400,6 @@ s1:     [        slot1         ]
 - To quickly find all such "may-overlap" slots for each `s1`, we put
   all slots in `slots2` in a BSTree. 
   
-
 **1473-Paint_house_III**
 - backtrack + state caching, passed through slow
 - DP solution takes O(m * n * target) complexity but faster
@@ -411,6 +414,15 @@ s1:     [        slot1         ]
     - in fact, we save the minimum and second minimum in case the minimum choice conflicts with the color of the right neighbor
 - Last but not the least, I really need to be careful with TreeSet.
   WHENEVER USING TreeSet, think about duplication problem.
+
+**1492-The_kth_factor_of_n**
+- basic idea: only iterate from 1 to sqrt(n) and form a factor sequence `S` of length `m`
+- the tricky part is that when `k > m`, we compute the `k`-th factor
+  by `n / S[m-(k-m)]` except for the case where `n / S[m-1] ==  S[m-1]`.
+  In this exceptional case, we are suppose to skip the
+  duplicated factory `S[m-1]` but the formula above will return
+  `S[m-1]` for both `k-th` and `(k+1)-th` factor.  So for the
+  exceptional case, we compute the `k`-th factor by `n / S[m-(k-m)-1]`.
 
 **1606-Find_servers_that_handled_most_number_of_requests**
 - This one is a good problem.  Brutal force is easy but optimized one is hard.
