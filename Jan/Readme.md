@@ -176,6 +176,63 @@ for each "update" record and scan the result array once at final.
 ```
 - We could optimize the solution above by caching words.
 
+**553-Optimal_division**
+
+- Well, it took me a huge while to come up the brutal force but
+  reasonable solution. It is based on the following generic example:
+  
+```
+Let [a,b,c,d,e] be an input.
+
+The maximal result is
+maxOf([a,b,c,d,e]) := 
+                a                    a
+  max( ------------------,   maxOf([---,c,d,e])), where
+        minOf([b,c,d,e])             b
+
+minOf([b,c,d,e]) := 
+
+                b                    b
+  min( ------------------,   minOf([---,d,e])), where
+        maxOf([c,d,e])               c
+```
+
+- The time complexity is n^2 as the recursion decrease the size of the
+  processing array by one and each recursive step produce two
+  branches.
+
+- A linear solution is based on an non-trivial math theorem: Given `[a/b/c/d/e/...]` and by adding parenthesises,
+  we could have
+  
+```
+   a  x y x ...
+  ------------- with "x y z ... i j k ..." being any one among "c d e ...."
+   b  i j k ...
+
+                                             a e
+   e.g.,  Given [a b c d e], our goal is  -----------
+                                             b c d					     
+   We add parenthesises like this:  a / b / c / (d / e)
+                    a c d 
+   If our goal is ---------
+                    b e
+   We add parenthesises like this:  a / (b / c / d) / e
+   
+```
+
+-  The generic algorithm is
+    - Let `groups` be a sequence of integer sequences.  The invariant
+      about the `groups' is that each `group` (i.e., an integer
+      sequence) is a sequence of numbers that should be enclosed in a
+      pair of parenthesises.      
+    - For a input "[a b c d...]", initially, `groups` has only one
+      group which includes only 'b';      
+    - If one wants the next number `i` to be a numerator factor (go
+      above the bar), add `i` to the last existing group in `groups`.    
+    - If one wants the next number `i` to be a denomenator factor (go
+      below the bar), add `i` as a new group.
+  
+
 **642-Design_search_autocomplete_system**
 - The key idea is to use Trie.
 
