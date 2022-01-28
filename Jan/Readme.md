@@ -455,7 +455,14 @@ s1:     [        slot1         ]
     - `s2_2, ..., s2_{n-1}` are the ones that are FULLY overlapped with `s1`;
     - `s2_n` is the one that `start(s2_n) < end(s1) && end(s2_n) >= end(s1)` if exists    
 - To quickly find all such "may-overlap" slots for each `s1`, we put
-  all slots in `slots2` in a BSTree. 
+  all slots in `slots2` in a BSTree.
+
+**1353-Maximum_number_of_events_that_can_be_attended**
+- This problem should be solved using Greedy algorithm.
+    - starting from day 0 and move forward day by day;
+    - for each day determine the set of events available and choose the one that will end soon;
+    - delete the event from the big collection once current day passes its end time.
+- need to practice Greedy algorithm problems more!
   
 **1473-Paint_house_III**
 - backtrack + state caching, passed through slow
@@ -519,10 +526,46 @@ s1:     [        slot1         ]
     - there is an LCA of the two nodes.
 - This one has a simple special case: return 0 immediatelt if `p == q`
 
+**1751-Maximum_number_of_events_that_can_be_attended_II**
+- Although this one looks like
+  "1353-Maximum_number_of_events_that_can_be_attended" but in fact
+  this one is a DP problem. In general, this one is more like
+  "2008-Maximum_earnings_from_taxi".
+- There are two ways to define DP[i][j]
+  - 1) `DP[i][j]`: the max value after i-th day and attending at most j events.  
+  - 2) `DP[i][j]`: the max value after the end time of event[i] and
+    attending at most j events.  This DP formula requires events to be
+    sorted by their end times.
+  - Option 1 enjoys ease of programming and thinking but each event could last very huge days thus is not scalable.
+  - Option 2 requires more thinking:
+  
+```
+
+ DP[i][j] := max(DP[i-1][j], DP[k][j-1] + value(event[i])),
+ where k is the largest index such that end(event[k]) < start(event[i])
+ 
+```
+
+- There are two things in this transition formula that are NOT immediately intuitive:
+    - There could be multiple events ending at the same time, how do they compare to each other?
+        - If there are multiple events ending at the same time, they are adjacent to each other after sorting.	
+	  The `DP[i-1][j]` part in the transition function compare
+	  with the neighbor before. It makes sure the last one among
+	  them will be the optimal one.	  
+    - Do we miss the case where event[k-1] overlaps event[k] and
+      `DP[i][j] = DP[k-1][j-1] + value(event[i])` is in fact the
+      optimal solution?      
+        - No. DP[k][j-1] subsumes DP[k-1][j-1]. It's a recursive similar case to the point above.
+
+
+**2008-Maximum_earnings_from_taxi**
+- typical DP problem
+
 **easy ones**
 - 202-Happy_number
 - 387-First_unique_character_in_a_string
 - 937-Reorder_data_in_log_files
 - 988-Smallest_string_starting_from_leaf
 - 994-Rotting_oranges
+- 1268-Search_suggestions_system 
 - 1732-Find_the_highest_altitude
