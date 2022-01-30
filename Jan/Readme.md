@@ -458,6 +458,9 @@ s1:     [        slot1         ]
   all slots in `slots2` in a BSTree.
 
 
+**1248-Count_number_of_nice_subarrays**
+- two pointers window sliding. see code comments
+
 **1326-Minimum_number_of_taps_to_open_to_water_a_garden**
 - I first came up a DP solution which is about O(N^2) worst time.
     - Let `DP[i]` be the minimum #taps to cover from position 0 to the
@@ -603,5 +606,8 @@ Here tap[k] "connects" with tap[i] means the end of tap[k] reaches/beyonds the s
 - 937-Reorder_data_in_log_files
 - 988-Smallest_string_starting_from_leaf
 - 994-Rotting_oranges
-- 1268-Search_suggestions_system 
+- 1167-Minimum_cost_to_connect_sticks
+- 1268-Search_suggestions_system
+- 1481-Least_number_of_unique_integers_after_k_removals
+- 1710-Maximum_units_on_a_truck
 - 1732-Find_the_highest_altitude
