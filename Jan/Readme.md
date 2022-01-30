@@ -457,6 +457,42 @@ s1:     [        slot1         ]
 - To quickly find all such "may-overlap" slots for each `s1`, we put
   all slots in `slots2` in a BSTree.
 
+
+**1326-Minimum_number_of_taps_to_open_to_water_a_garden**
+- I first came up a DP solution which is about O(N^2) worst time.
+    - Let `DP[i]` be the minimum #taps to cover from position 0 to the
+      end of tap[i], i.e., `i + range[i]`;      
+    - Sort the taps by their ending positions so that we can iterate
+      over them by such order.      
+    - In addition, we can directly remove a tap `t` if 1) it's range
+      is 0 or 2) it ends at the same position of anothet tap `t'` and
+      `range(t) < range(t')`.  Because in 1, the tap cannot cover
+      anything; in 2, `t` can be completely covered by `t'`.      
+    - We compute DP[i] in the order of our sorted taps:      
+    
+```
+DP[i] =   1,              if tap[i] covers 0, or
+        | min(DP[K]) + 1, where K is the set of taps that "connect" with tap[i], if K is non-empty, or
+	| 0,              otherwise
+
+Here tap[k] "connects" with tap[i] means the end of tap[k] reaches/beyonds the start of tap[i].
+
+```
+
+- LC provides the Jump Game solution, which only takes O(n) time.
+    - For each position i, computes jump[i] to be the max jump it can
+      take from position i, i.e., for a tap `t`, `jump[start(t)] = max({ end(t') | start(t') == start(t), t' is a tap })`.      
+    - Then, starting at position 0, the farrest place we can go is
+      `jump[0]`.  We need to select the next jump among `{ jump[i] | 0 <= i <= jump[0] }`.      
+      After selection, increments the jump count and updates the
+      farrest position to be the next jump.      
+    - In general, suppose the last max jump reaches position `k`, then
+      we first increment jump count (i.e., tap count) by one then
+      select the maximum next jump among `{ jump[i] | k <= i <= jump[k] }`.      
+    - Finally, if we cannot reach `n`, we failed. Otherwise, the jump
+      count is the number of taps we need.
+
+
 **1353-Maximum_number_of_events_that_can_be_attended**
 - This problem should be solved using Greedy algorithm.
     - starting from day 0 and move forward day by day;
