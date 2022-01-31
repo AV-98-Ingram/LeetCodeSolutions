@@ -431,6 +431,11 @@ foreach (arr[i], arr[j]) where i > j
   depth less than or equal to `D/2` to another string in the second
   scan.
 
+**1151-Minimum_swaps_to_group_all_1\'s_together**
+- Window sliding: to find such a window [l, r] that 
+    - 1) size([l, r]) == total-number-of-ones; and 
+    - 2) the number of '1's in [l, r] is max
+
 **1152-Analyze_user_website_visit_pattern**
 - need to read the problem description carefully
 - brutal force
@@ -558,6 +563,19 @@ Here tap[k] "connects" with tap[i] means the end of tap[k] reaches/beyonds the s
   about separate the collection into two group.
 
 
+**1648-Sell_diminishing_valued_colored_balls**
+- Basically simple greedy algorithm.
+- But as the number can be huge LC does not accept plain greedy algo:
+- Optimizations are needed:
+    - Suppose at a time the max stock of ball is `k` and the second
+      max `k'`, we could directly sell `k - k'` balls at a time.
+    - Furthermore, there could be n kinds of balls are all at max
+      stock k at a time.  We could sell them all together. Just need to
+      figure out the book-keeping functions:      
+        -  `sell = min(orders, n * (k-k')`
+	-  `sellPerBallKind = sell / n`: the number of balls of each kind will be sold in one bulk-sell.
+	-  `remaining = sell % n`      : the number of KINDs of balls that each will be sold one more.    
+
 **1740-Find_distance_in_a_binary_tree**
 - Another problem of "finding two nodes under a tree", typically,
   just consider the two cases:
@@ -603,11 +621,14 @@ Here tap[k] "connects" with tap[i] means the end of tap[k] reaches/beyonds the s
 **easy ones**
 - 202-Happy_number
 - 387-First_unique_character_in_a_string
+- 892-Surface_area_of_3D_shapes
 - 937-Reorder_data_in_log_files
 - 988-Smallest_string_starting_from_leaf
 - 994-Rotting_oranges
 - 1167-Minimum_cost_to_connect_sticks
 - 1268-Search_suggestions_system
 - 1481-Least_number_of_unique_integers_after_k_removals
+- 1628-Design_an_expression_tree_with_evaluate_function
 - 1710-Maximum_units_on_a_truck
+- 1730-Shortest_path_to_get_food 
 - 1732-Find_the_highest_altitude
