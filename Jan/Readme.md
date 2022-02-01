@@ -371,6 +371,12 @@ foreach (arr[i], arr[j]) where i > j
   `arr` one by one and maintain a state.  The state comprises `arr[i] + arr[j] -> fibo subseqs whose next are arr[i] + arr[j]` pairs.  For
   each newly scanned `arr[k]`, update the state by processing `(arr[i] + arr[k])` for each already scanned `arr[i]`.
 
+**891-Sum_of_subsequence_widths**
+- Through logical thinking and DP I came up a O(n * m) solution. See comment in the code. (solution.java)
+- The point I was missing so that I did not optimize it to O(n) is
+  that to accumulate `a[i] - b[i]`, we could always do it by
+  accumulate `a[i]` and `-b[i]`. (solution2.java)
+
 **907-Sum_of_subarray_minimums**
 - There are three key ideas in this problem
     - 1. The same basic idea as Problem 828: counting each number for its appearances in sub-arrays where it is the min.
