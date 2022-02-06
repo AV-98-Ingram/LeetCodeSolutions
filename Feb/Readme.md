@@ -1,5 +1,20 @@
+**123-Best_time_to_buy_and_sell_stock_III**
+- the optimal algorithm optimizes for exact 2 transactions:
+    - Bi-directional `DP` with `DP[i]` meaning that the max profit after 1 transaction and day i.
+    - state machine.    
+
 **151-Reverse_words_in_a_string**
 - For O(1) space solution: reverse the whole string then reverse each word.
+
+**188-Best_time_to_buy_and_sell_stock_IV**
+- Another practice for `DP[i] = Max/Min(DP[x] - a[y])` for some `x,y`
+  that are in some range defined by `i`.  One can always think about
+  it as if it is `DP[x] + (-a[y])` and use DP technique to cache
+  Max/Min of `-a[y]` so that no need to iterate to find out the
+  Max/Min.
+- This problem is quite difficult to find the DP pattern I think:
+    - DP[i][j][0]: the max money in hand at day j with at most i transactions and 0 stock in hand
+    - DP[i][j][1]: the max money in hand at day j with at most i transactions and a stock in hand
 
 **238-Product_of_array_except_self**
 - Prefix product and suffix product
