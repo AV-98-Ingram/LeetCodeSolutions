@@ -34,9 +34,41 @@
       then takes constant time to remove the corresponding node from
       the list
 
+**1275-Find_winner_on_a_tic_tac_toe_game**
+- Remember the design tic-tac-toe? count each row, column and diagnal separately.
+
 **1344-Angle_between_hands_of_a_clock**
 - Be careful! The hour hand is not pointing at 1 at time "1:30" but at
   the middle of 1 and 2.
+
+**1405-Longest_happy_string**
+- Greedy algo:
+    - sort the given letters by their maximum appearances in descending order    
+    - always try to place the letter with max remaining appearance if
+      possible because we want to place it as many as possible    
+        - if it is not possible to place the letter of the max
+          appearance, place one letter of the second max.	
+        - if it is possible, see if we can greedily place two letters
+          of the max appearance:	
+	    - if the max appearance is greater than the second max by
+              at least two, we can place two letters of the max
+              appearance	      
+	    - the intuition behind this is that we want to place the
+              letter of max appearance as many as possible.  But if
+              the max appearance does not greater than the second max
+              by at least two, the current letter of max may no longer
+              hold the max remaining appearance after being placed one
+              letter.  In such case, we can only place one letter for
+              the current letter of max apperance.
+
+**1578-Minimum_time_to_make_rope_colorful**
+- window sliding and greedy:
+    - sliding the window and maintaining the invariant that the window
+      `[left, right]` covers consecutive balloons (cells) of same
+      color.      
+    - once a window becomes maximal, we only keep the one in the
+      windown with the max cost and remove the rest.  This requires us
+      to keep track of max during window sliding
 
 **easy ones**
 - 443-String_compression
