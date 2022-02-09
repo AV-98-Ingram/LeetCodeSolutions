@@ -34,12 +34,23 @@
       then takes constant time to remove the corresponding node from
       the list
 
+**979-Distribute_coins_in_binary_tree**
+- Recursively compute the number coins needed for both left and right
+  child and at the same time accumulating moves needed.
+- A big NOTE is that the coins needed by a child node could be a
+  negative number meaning that the child node in fact has extra coins.
+
 **1275-Find_winner_on_a_tic_tac_toe_game**
 - Remember the design tic-tac-toe? count each row, column and diagnal separately.
 
 **1344-Angle_between_hands_of_a_clock**
 - Be careful! The hour hand is not pointing at 1 at time "1:30" but at
   the middle of 1 and 2.
+
+**1386-Cinema_seat_allocation**
+- bitwise representation for seats
+- instead of iterating each row for computing the total capacity, iterating the
+  rows containing reserved seats only! Because rows without reserved seat can fit 2 groups for sure!
 
 **1405-Longest_happy_string**
 - Greedy algo:
@@ -72,3 +83,4 @@
 
 **easy ones**
 - 443-String_compression
+- 545-Boundary_of_binary_tree 
