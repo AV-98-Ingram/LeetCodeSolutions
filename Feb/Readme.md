@@ -20,8 +20,24 @@
 - Prefix product and suffix product
 - Follow-up requires constant space usage: use only one variable to aggregate the suffix product
 
+
+**285-Inorder_successor_in_bst**
+- There are two cases:
+    - If the give node `p` has right child, then return the next inorder node of its right child.
+    - Otherwise, recursively compute:
+        - If a node's left child contains `p` but not successor of `p` the node is the successor.
+
 **297-Serialize_and_deserialize_binary_tree**
 - serialize a binary tree level by level, using "()" to group each level
+
+**322-Coin_change**
+- A DP problem: `DP[i]` is the min number of coins to make up the amount `i`
+- Maybe backtrack + cache could be better? An hypothesis is that not
+  every `amount` can be made up by the coins and backtrack approach only
+  computes for `amount`s that can be made up.
+
+**340-Longest_substring_with_at_most_k_distinct_characters**
+- simple window sliding problem
 
 **449-Serialize_and_deserialize_BST**
 - same as 297 but needs to remove all the tailing "null"s
@@ -33,6 +49,15 @@
     - To delete the max, it takes O(logN) to find the max value and
       then takes constant time to remove the corresponding node from
       the list
+
+**968-Binary_tree_cameras**
+- I used the greedy approach:
+    - Compute from bottom-up using DFS
+    - If a node is a leaf, leave it there as UN-monitored.
+    - If a non-leaf node has at least one child UN-monitored, the node has to install a camera
+    - If a non-leaf node has all its children monitored,
+        - if one of its child has an installed camera, mark the node monitored
+	- otherwise, leave it there as UN-monitored
 
 **979-Distribute_coins_in_binary_tree**
 - Recursively compute the number coins needed for both left and right
