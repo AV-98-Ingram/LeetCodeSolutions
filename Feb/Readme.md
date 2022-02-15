@@ -39,6 +39,11 @@
 **340-Longest_substring_with_at_most_k_distinct_characters**
 - simple window sliding problem
 
+**351-Android_unlock_patterns**
+- DFS and only to explore paths starting from (0,0) (other corner
+  cells are the same), (0,1) (other non-corner edge cells are the
+  same), and (1,1) (center).
+
 **449-Serialize_and_deserialize_BST**
 - same as 297 but needs to remove all the tailing "null"s
 
@@ -64,6 +69,12 @@
   child and at the same time accumulating moves needed.
 - A big NOTE is that the coins needed by a child node could be a
   negative number meaning that the child node in fact has extra coins.
+
+**1015-Smallest_integer_divisible_by_k**
+- Need to know a bit math here: let `n` be a number where all digits
+  are `1`s.  If `n % k == 0` we are done.  Otherwise,  `n` becomes `n * 10 + 1` and the remainder becomes
+  `(n % k) * 10 + 1`.  So we only need to test if `((n % k) * 10 + 1) % k == 0` for `n * 10 + 1`.
+- Repeatedly doing this until we go back to a seen remainder.  
 
 **1275-Find_winner_on_a_tic_tac_toe_game**
 - Remember the design tic-tac-toe? count each row, column and diagnal separately.
@@ -107,5 +118,6 @@
       to keep track of max during window sliding
 
 **easy ones**
+- 341-Flatten_nested_list_iterator
 - 443-String_compression
 - 545-Boundary_of_binary_tree 
