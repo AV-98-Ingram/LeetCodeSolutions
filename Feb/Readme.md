@@ -47,6 +47,11 @@
 **449-Serialize_and_deserialize_BST**
 - same as 297 but needs to remove all the tailing "null"s
 
+**476-Number_complement**
+- finds out the highest bit of 1 (suppose the bit is the n-th bit
+  counting from the rightmost), creates a mask of n bits of 1s, and
+  the result is then `num ^ mask`.
+
 **716-Max_stack**
 - For the follow-up----make popMax() O(logN)
     - Use a double linked list to represent the stack
@@ -108,6 +113,12 @@
               letter.  In such case, we can only place one letter for
               the current letter of max apperance.
 
+**1463-Cherry_pick_II**
+- obvious DP but be careful with all kinds of constraints:
+    - left and right bots have no need to make their paths cross    
+    - at each row i, the max column the left bot can reach is (0 +
+      i). Vice versa for the right bot.
+
 **1578-Minimum_time_to_make_rope_colorful**
 - window sliding and greedy:
     - sliding the window and maintaining the invariant that the window
@@ -120,4 +131,5 @@
 **easy ones**
 - 341-Flatten_nested_list_iterator
 - 443-String_compression
-- 545-Boundary_of_binary_tree 
+- 545-Boundary_of_binary_tree
+- 609-Find_duplicate_file_in_system
