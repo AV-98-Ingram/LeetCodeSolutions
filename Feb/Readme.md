@@ -30,6 +30,15 @@
 **297-Serialize_and_deserialize_binary_tree**
 - serialize a binary tree level by level, using "()" to group each level
 
+
+**312-Burst_balloons**
+- top-down divide and conquer with caching.
+- To divide: If fix the `i`-th balloon to burst at LAST, it divides
+  the balloons into two independent groups: before and after `i`.  The
+  whole group of balloons can be "conquered" recursively in such a
+  way.
+
+
 **322-Coin_change**
 - A DP problem: `DP[i]` is the min number of coins to make up the amount `i`
 - Maybe backtrack + cache could be better? An hypothesis is that not
@@ -118,6 +127,12 @@
     - left and right bots have no need to make their paths cross    
     - at each row i, the max column the left bot can reach is (0 +
       i). Vice versa for the right bot.
+
+**1524-Number_of_sub-arrays_with_odd_sum**
+- `DP[i]`: the number of odd sum subarrays ending at index `i`.
+- transition is based on the idea that
+    - If `nums[i+1]` is even, `DP[i+1] = DP[i]`.
+    - If `nums[i+1]` is odd,  `DP[i+1] = 1 + (the number of even sum subarrays ending at index i)`.
 
 **1578-Minimum_time_to_make_rope_colorful**
 - window sliding and greedy:
