@@ -31,6 +31,9 @@
 - serialize a binary tree level by level, using "()" to group each level
 
 
+**311-Sparse_matrix_multiplication**
+- sparse matrix representation saves non-zero columns in each row
+
 **312-Burst_balloons**
 - top-down divide and conquer with caching.
 - To divide: If fix the `i`-th balloon to burst at LAST, it divides
@@ -84,6 +87,20 @@
 - A big NOTE is that the coins needed by a child node could be a
   negative number meaning that the child node in fact has extra coins.
 
+**1007-Minimum_domino_rotations_for_equal_row**
+- Two things need to be careful due to the fact that the top and
+  bottom on a domino can be the same:  
+    - 1. If it takes `n` rotations to make all tops the same, it DOES
+         NOT MEANING that it must take `#dominos - n` rotations to
+         make all bottoms the same.	 
+    - 2. If the top and bottom of a domino are the same, be careful not to rotating such domino for nothing.
+
+- Optimization: Although it seems that there are 6 possible numbers
+  (i.e., 1 to 6) for top or bottom to be after rotation, there are in
+  fact at most 2 among the 6, i.e., `{tops[0], bottoms[0]}`.  As for any
+  number in [1,6] that does not equal to `tops[0]` or `bottoms[0]`, it
+  won't work.
+
 **1015-Smallest_integer_divisible_by_k**
 - Need to know a bit math here: let `n` be a number where all digits
   are `1`s.  If `n % k == 0` we are done.  Otherwise,  `n` becomes `n * 10 + 1` and the remainder becomes
@@ -92,6 +109,9 @@
 
 **1275-Find_winner_on_a_tic_tac_toe_game**
 - Remember the design tic-tac-toe? count each row, column and diagnal separately.
+
+**1291-Sequential_digits**
+- be careful with termination: last digit as well as the number of digits cannot go beyond 9
 
 **1344-Angle_between_hands_of_a_clock**
 - Be careful! The hour hand is not pointing at 1 at time "1:30" but at
@@ -128,6 +148,15 @@
     - at each row i, the max column the left bot can reach is (0 +
       i). Vice versa for the right bot.
 
+**1488-Avoid_flood_in_the_city**
+- For each pair (i, j) such that `rains[i]` and `rains[j]` pour in the
+  same lake and i < j, find the first dry day in between (i, j) to dry
+  the lake.
+- Use heap to store dry days for log(n) search  
+
+**1510-Stone_game_IV**
+- top-down DP with cache
+
 **1524-Number_of_sub-arrays_with_odd_sum**
 - `DP[i]`: the number of odd sum subarrays ending at index `i`.
 - transition is based on the idea that
@@ -144,6 +173,7 @@
       to keep track of max during window sliding
 
 **easy ones**
+- 223-Rectangle_area
 - 341-Flatten_nested_list_iterator
 - 443-String_compression
 - 545-Boundary_of_binary_tree
