@@ -64,6 +64,30 @@
   counting from the rightmost), creates a mask of n bits of 1s, and
   the result is then `num ^ mask`.
 
+
+**503-Next_greater_element_II**
+- I came out a solution that takes O(nlogn) time:
+    - scan the array in two rounds.  In the first round, try to find
+      the "greater next" `n` for each previously visited but unmarked
+      `m` such that `index(n) > index(m)`.  Mark `m` once its "greater
+      next" has been found.
+
+      In the second round, try to find the "greater next" `n` for each
+      unmarked `m` (left from last round) such that `index(n) < index(m)`.
+      Mark out `m` onces its "greater next" has been found.
+
+      Test if `n` is the "greater next" for unmarked `m`s takes O(logn).
+
+- LC provides O(n) solution.  The main idea is still scan the array
+  twice.  It first scans the array in backwards: suppose the scan
+  reaches `a[i]`, then for `a[j] <= a[i], i < j`, `a[j]` is not
+  possible to be the "greater next" of the un-scanned numbers on the
+  left of `i`. But for `a[j] > a[i], i < j`, it still is the "greater
+  next" candidate for un-scanned numbers on the left of `i` that is no
+  less than `a[i]`.  So we can use a stack to maintain these candidates.
+  Vice versa for the second round of the scan.
+
+
 **716-Max_stack**
 - For the follow-up----make popMax() O(logN)
     - Use a double linked list to represent the stack
@@ -71,6 +95,15 @@
     - To delete the max, it takes O(logN) to find the max value and
       then takes constant time to remove the corresponding node from
       the list
+
+**895-Maximum_frequency_stack**
+- Use a map to keep track of positions of every value.
+- On the order of values, we only need to preserve the order of values
+  in their `i`-th repetition for every `i`.  
+    - For example, if the stack has three `2`s and three `3`s and one
+      `1`, we only care about the order between the 3rd `2` and the
+      3rd `3`, the order between the 2nd `2` and the 2nd `3`, and the
+      order among the 1st `1`, `2` and `3`.
 
 **968-Binary_tree_cameras**
 - I used the greedy approach:
