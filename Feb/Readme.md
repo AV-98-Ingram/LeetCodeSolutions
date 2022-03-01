@@ -48,6 +48,27 @@
   every `amount` can be made up by the coins and backtrack approach only
   computes for `amount`s that can be made up.
 
+**325-Maximum_size_subarray_sum_equals_k**
+- prefix sum
+- don't forget the left bound (i.e., prefix sum 0, index 0) for the case that the max subarray is a prefix of the given array.
+
+**336-Palindrome_pairs**
+- brutal force is easy
+- optimization using a prefix tree (trie).
+
+    - For each pair of words `x`, `y`, it is either `xy` or `yx` forms
+      a palindrome.  That is saying it is either `x` and `reverse(y)`
+      or `y` and `reverse(x)` share a prefix.
+    - Save every reversed words in a trie. Then iterate each word to
+      match agaist the trie to find out the minimal set of candidates
+      for further check.      
+    - Note that there are two cases: either the iterating word `w` is
+      longer or the reversed word sharing a prefix with `w` is longer.      
+          - The former case requires to know that if a trie node is the end
+            of a reversed word.	    
+          - The latter case requires to know that what are the owners
+            (reversed words) of a trie node.      
+
 **340-Longest_substring_with_at_most_k_distinct_characters**
 - simple window sliding problem
 
@@ -95,6 +116,10 @@
     - To delete the max, it takes O(logN) to find the max value and
       then takes constant time to remove the corresponding node from
       the list
+
+**796-Rotate_string**
+- KMP revisit
+- simply `(str + str).contains(goal)`. Concatenating two of the given string `str`.
 
 **895-Maximum_frequency_stack**
 - Use a map to keep track of positions of every value.
@@ -207,7 +232,13 @@
 
 **easy ones**
 - 223-Rectangle_area
+- 283-Move_zeroes
 - 341-Flatten_nested_list_iterator
 - 443-String_compression
 - 545-Boundary_of_binary_tree
 - 609-Find_duplicate_file_in_system
+- 894-All_possible_full_binary_trees
+- 1207-Unique_number_of_occurrences
+- 1266-Minimum_time_visiting_all_points
+- 1446-Consecutive_characters
+- 2042-Check_if_numbers_are_ascending_in_a_sentence
