@@ -171,6 +171,14 @@
 **1291-Sequential_digits**
 - be careful with termination: last digit as well as the number of digits cannot go beyond 9
 
+**1312-Minimum_insertion_steps_to_make_a_string_palindrome**
+
+- Important! When it comes to palindrome-related DP, think about
+  topdown DP that explore three cases for the string `s[l .. r]`:
+    - `s[l+1 .. r]`
+    - `s[l .. r-1]`
+    - `s[l+1 .. r-1]`
+
 **1344-Angle_between_hands_of_a_clock**
 - Be careful! The hour hand is not pointing at 1 at time "1:30" but at
   the middle of 1 and 2.
