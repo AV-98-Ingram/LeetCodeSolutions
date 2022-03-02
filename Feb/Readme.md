@@ -77,6 +77,9 @@
   cells are the same), (0,1) (other non-corner edge cells are the
   same), and (1,1) (center).
 
+**420-Strong_password_checker**
+- Tricky but interesting, see my comment in the code
+
 **449-Serialize_and_deserialize_BST**
 - same as 297 but needs to remove all the tailing "null"s
 
