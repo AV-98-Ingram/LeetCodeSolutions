@@ -14,4 +14,7 @@
     - node n such that `n.val < insertVal < n.next.val`, this is a good place to insert
 
 **easy ones**
+- 158-Read_n_characters_given_read4_II
 - 198-House_robber
+- 508-Most_frequent_subtree_sum
+- 814-Binary_tree_pruning
